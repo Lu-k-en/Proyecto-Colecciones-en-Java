@@ -5,6 +5,9 @@
  */
 package proyecto.colecciones.en.java;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  *
  * @author andy
@@ -15,7 +18,9 @@ public class ProyectoColeccionesEnJava {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        List<Alumno> alumnos = new LinkedList<>();
+        
+        
     }
     
 }
