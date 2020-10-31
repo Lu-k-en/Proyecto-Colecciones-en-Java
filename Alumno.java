@@ -23,7 +23,7 @@ public class Alumno {
         return clavesGrupos;
     }
     
-    public void setMaterias(String [] clavesGrupos) { 
+    public void setClavesGrupos(String [] clavesGrupos) { 
         this.clavesGrupos = clavesGrupos;
     }
 }
