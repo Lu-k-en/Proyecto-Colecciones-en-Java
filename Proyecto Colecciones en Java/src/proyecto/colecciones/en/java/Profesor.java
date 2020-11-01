@@ -8,8 +8,8 @@ public class Profesor {
     private String Nombre;
     private String Correo;
     private long NumCuentaProfesor;
-    private int gruposInscritos = 5;
-    private String[] ClaveGrupos = new String[gruposInscritos];
+    private int gruposInscritos = 0;
+    private String[] ClaveGrupos = new String[5];
     private static int numProfesores=0;
     
     public Profesor(String Nombre, String gradoAcademico, String Correo){
@@ -87,6 +87,11 @@ public class Profesor {
                 System.out.println(" - "+i);
             }
         }
+    }
+    
+    public void addClaveGrupos(String ClaveGrupo){
+        this.ClaveGrupos[gruposInscritos] = ClaveGrupo;
+        gruposInscritos++;
     }
     
 }
