@@ -5,25 +5,28 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Scanner;
 
 public class ProyectoColeccionesEnJava { 
     
     public static void main(String[] args) {
-        List<Alumno> alumnos = new LinkedList<>();
-        List<Profesor> profesores = new LinkedList<>();
+        
+        //Hashtable key = #cuenta, value = alumno
+        Hashtable<Long,Alumno> alumnos = new Hashtable<>();
+        Hashtable<Long,Profesor> profesores = new Hashtable<>();
+        
+        //Hashtable<Integer, Asignatura> asignaturas = new Hashtable<>();
+        //Set<Long> numerosCuenta = new HashSet<>();
+        
         List<Asignatura> asignaturas = new LinkedList<>();
-        
-        Set<Long> numerosCuenta = new HashSet<>();
         Set<Integer> clavesAsignaturas = new HashSet<>();
-        
         HashMap<String, Grupo> grupos = new HashMap<>();
 
         Scanner sc = new Scanner(System.in);
         
         int op;
         String nombre;
-        long numCuenta;
         int clave;
         int opAux;
         int opAux2;
@@ -43,38 +46,40 @@ public class ProyectoColeccionesEnJava {
             op = sc.nextInt();
             
             switch(op){
-                case 1:
+               
+                case 1->{
+                    
+                   
                     System.out.println("Ingrese el número de cuenta del alumno");
-                    numCuenta = sc.nextLong();
-                    if (numerosCuenta.contains(numCuenta)){
+                    long numCuenta = sc.nextLong(); 
+                    if (alumnos.containsKey(numCuenta)){
                         System.out.println("Ya existe este alumno");
                     }else{
                         System.out.println("Ingrese el nombre del alumno");
                         nombre = sc.next();
-                        numerosCuenta.add(numCuenta);
-                        alumnos.add(new Alumno(nombre, numCuenta));
+                       
+                        alumnos.put(numCuenta, new Alumno(nombre));
                     }
-                break;
-                case 2:
+                }
+                case 2->{
                     System.out.println("Ingrese el número de cuenta del profesor");
-                    numCuenta = sc.nextLong();
-                    if (numerosCuenta.contains(numCuenta)){
+                    long numCuenta = sc.nextLong();
+                    if (profesores.containsKey(numCuenta)){
                         System.out.println("Ya existe este profesor");
                     }else{
                         System.out.println("Ingrese el nombre del profesor");
-                        nombre = sc.next();
+                        nombre = sc.next(); // Porque no usar nextLine()?
                         
                         System.out.println("Ingrese el grado académico del profesor");
                         String gradoProfesor = sc.next();
                         
                         System.out.println("Ingrese el correo del profesor");
-                        String correo = sc.next();
-                        
-                        numerosCuenta.add(numCuenta);
-                        profesores.add(new Profesor(nombre, gradoProfesor, correo));
+                        String correo = sc.next();     
+                        profesores.put(numCuenta, new Profesor(nombre, gradoProfesor, correo));
+                    
                     }
-                break;
-                case 3:
+                }
+                case 3 -> {
                     System.out.println("Ingrese la clave de la asignatura");
                     clave = sc.nextInt();
                     if (clavesAsignaturas.contains(clave)){
@@ -92,8 +97,9 @@ public class ProyectoColeccionesEnJava {
                         clavesAsignaturas.add(clave);
                         asignaturas.add(new Asignatura(nombre, area, semestre, clave));
                     }
-                break;
-                case 4:
+                    break;
+                }
+                case 4 -> {
                     if(profesores.size() <= 0 || asignaturas.size() <= 0){
                         System.out.println("No hay profesores registrados o asignaturas registradas");
                     }
@@ -130,11 +136,10 @@ public class ProyectoColeccionesEnJava {
                             System.out.println("Este profesor no puede dar más asignaturas");
                         }
                     }
-                break;
-                default:
-                    System.out.println("Opción no válida");
+                    break;
+                }
+                default ->{ System.out.println("Opción no válida"); break;}
                     
-                break;
             }
         }while(op != 99);
     }
