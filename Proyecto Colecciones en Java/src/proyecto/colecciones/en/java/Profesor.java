@@ -24,15 +24,25 @@ public class Profesor {
     }
     
     public void setGradoAcademico(String gradoAcademico) {
-        this.gradoAcademico = gradoAcademico;
+        if(gradoAcademico.length() > 1 && gradoAcademico.length() < 4){
+            this.gradoAcademico = gradoAcademico;
+        }else{
+            System.out.println("El grado académico debe de contener de 2 a 3 letras Ej. MI, I, DR");
+            this.gradoAcademico = null;
+        }    
     }
     
     public String getNombre() {
         return nombre;
     }
     
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String nombre){
+        if(nombre.length() > 2 && nombre.length() < 50){
+            this.nombre = nombre;
+        }else{
+            System.out.println("El nombre debe tener al menos 3 caracteres y menos de 50");
+            this.nombre = null;
+        }            
     }
     
     public String getCorreo() {
@@ -40,7 +50,12 @@ public class Profesor {
     }
     
     public void setCorreo(String correo) {
-        this.correo = correo;
+        if(correo.contains("@")){
+            this.correo = correo;
+        }else{
+            System.out.println("El correo debe tener un @");
+            this.correo = null;
+        }
     }
     
     public static int getNumProfesores(){

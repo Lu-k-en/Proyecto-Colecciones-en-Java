@@ -2,7 +2,6 @@ package proyecto.colecciones.en.java;
 
 public class Alumno {
     private String nombre;
-    private long numeroCuenta;
     private int gruposInscritos = 0;
     private String[] clavesGrupos = new String[3];
     private static int numAlumnos = 0;
@@ -17,7 +16,12 @@ public class Alumno {
     }
     
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if(nombre.length() > 2 && nombre.length() < 50){
+            this.nombre = nombre;
+        }else{
+            System.out.println("El nombre debe tener al menos 3 caracteres y menos de 50");
+            this.nombre = null;
+        }            
     }
    
     public String[] getClavesGrupos() {

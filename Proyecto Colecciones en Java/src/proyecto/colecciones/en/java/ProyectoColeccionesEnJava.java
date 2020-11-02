@@ -50,7 +50,6 @@ public class ProyectoColeccionesEnJava {
                
                 case 1->{
                     
-                   
                     System.out.println("Ingrese el número de cuenta del alumno");
                     long numCuenta = sc.nextLong(); 
                     if (alumnos.containsKey(numCuenta)){
@@ -58,7 +57,14 @@ public class ProyectoColeccionesEnJava {
                     }else{
                         System.out.println("Ingrese el nombre del alumno");
                         nombre = sc.next();
-                        alumnos.put(numCuenta, new Alumno(nombre));
+                        Alumno alumnoNuevo = new Alumno(nombre);
+                        
+                        while(alumnoNuevo.getNombre() != null){
+                            System.out.println("Ingrese el nombre del alumno");
+                            nombre = sc.next();
+                            alumnoNuevo.setNombre(nombre);
+                        }
+                        alumnos.put(numCuenta, alumnoNuevo);
                     }
                 }
                 case 2->{
@@ -75,7 +81,28 @@ public class ProyectoColeccionesEnJava {
                         
                         System.out.println("Ingrese el correo del profesor");
                         String correo = sc.next();     
-                        profesores.put(numCuenta, new Profesor(nombre, gradoProfesor, correo));
+                        
+                        Profesor nuevoProfesor = new Profesor(nombre, gradoProfesor, correo);
+                        
+                        while(nuevoProfesor.getNombre() != null){
+                            System.out.println("Ingrese el nombre del profesor");
+                            nombre = sc.next();
+                            nuevoProfesor.setNombre(nombre);
+                        }
+                        
+                        while(nuevoProfesor.getCorreo() != null){
+                            System.out.println("Ingrese el correo del profesor");
+                            correo = sc.next();
+                            nuevoProfesor.setCorreo(correo);
+                        }
+                        
+                        while(nuevoProfesor.getGradoAcademico() != null){
+                            System.out.println("Ingrese el grado académico del profesor");
+                            gradoProfesor = sc.next();
+                            nuevoProfesor.setGradoAcademico(gradoProfesor);
+                        }
+                        
+                        profesores.put(numCuenta, nuevoProfesor);
                     
                     }
                 }
@@ -93,9 +120,27 @@ public class ProyectoColeccionesEnJava {
                         
                         System.out.println("Ingrese el semestre de la asignatura");
                         int semestre = sc.nextInt();
+                        Asignatura nuevaAsignatura = new Asignatura(nombre, area, semestre);
                         
-                        asignaturas.put(clave, new Asignatura(nombre, area, semestre, clave));
-
+                        while(nuevaAsignatura.getNombre() != null){
+                            System.out.println("Ingrese el nombre de la asignatura");
+                            nombre = sc.next();
+                            nuevaAsignatura.setNombre(nombre);
+                        }
+                        
+                        while(nuevaAsignatura.getArea() != null){
+                            System.out.println("Ingrese el area de la asignatura");
+                            area = sc.next();
+                            nuevaAsignatura.setArea(area);
+                        }
+                        
+                        while(nuevaAsignatura.getSemestre() != 0){
+                            System.out.println("Ingrese el semestre de la asignatura");
+                            semestre = sc.nextInt();
+                            nuevaAsignatura.setSemestre(semestre);
+                        }
+                        
+                        asignaturas.put(clave, nuevaAsignatura);
                     }
                     break;
                 }
@@ -121,18 +166,20 @@ public class ProyectoColeccionesEnJava {
                             opAux2 = sc.nextInt();
                             System.out.println("Ingrese la clave del grupo");
                             clave = sc.nextInt();
-
                             String claveGrupo = asignaturas.get(asignaturasKeys[opAux - 1]).getNombre() + Integer.toString(clave);
-
-                            if(grupos.containsKey(claveGrupo)){
+                            
+                            while(grupos.containsKey(claveGrupo)){
                                 System.out.println("Ya existe este grupo");
-                            }else{
-                                System.out.println("Ingrese el horario de la asignatura");
-                                //Calendar[] horario = funcionCrearHorario -> Horario [[dia1,horainicio1,horafin1],[dia2,horainicio2,horafin2],...,[dia n,horainicio n,horafin n]]
-                                //grupos.put(claveGrupo, new Grupo( asignaturas.get(asignaturasKeys[opAux2 - 1]), clave, horario, profesores.get(profesoresKeys[opAux - 1])));
-                                profesores.get(profesoresKeys[opAux - 1]).addClaveGrupo(claveGrupo);
-                                asignaturas.get(asignaturasKeys[opAux2 - 1]).addClaveGrupo(claveGrupo);
+                                System.out.println("Ingrese la clave del grupo");
+                                clave = sc.nextInt();
+                                claveGrupo = asignaturas.get(asignaturasKeys[opAux - 1]).getNombre() + Integer.toString(clave);
                             }
+
+                            System.out.println("Ingrese el horario de la asignatura");
+                            //Calendar[] horario = funcionCrearHorario -> Horario [[dia1,horainicio1,horafin1],[dia2,horainicio2,horafin2],...,[dia n,horainicio n,horafin n]]
+                            //grupos.put(claveGrupo, new Grupo( asignaturas.get(asignaturasKeys[opAux2 - 1]), clave, horario, profesores.get(profesoresKeys[opAux - 1])));
+                            profesores.get(profesoresKeys[opAux - 1]).addClaveGrupo(claveGrupo);
+                            asignaturas.get(asignaturasKeys[opAux2 - 1]).addClaveGrupo(claveGrupo);
                         }else{
                             System.out.println("Este profesor no puede dar más asignaturas");
                         }
