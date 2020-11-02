@@ -49,4 +49,11 @@ public class Alumno {
         this.clavesGrupos[gruposInscritos] = claveGrupo;
         gruposInscritos++;
     }
+
+    public static int getNumAlumnos() {
+        return numAlumnos;
+    }
+    
+    
+    
 }
