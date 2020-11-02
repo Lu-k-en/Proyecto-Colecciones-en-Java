@@ -10,88 +10,68 @@ public class ProyectoColeccionesEnJava {
         
         //Hashtable key = #cuenta, value = alumno || clave, asignatura
         HashMap<Long,Alumno> alumnos = new HashMap<>();
-        //HashMap<Long,Profesor> profesores = new HashMap<>();
-        HashMap<Integer,Asignatura> asignaturas = new HashMap<>(); 
+        HashMap<Long,Profesor> profesores = new HashMap<>();
+        HashMap<Integer,Asignatura> asignaturas = new HashMap<>();
+        
+        //Hashtable<Integer, Asignatura> asignaturas = new Hashtable<>();
+        //Set<Long> numerosCuenta = new HashSet<>();
+        
+        //List<Asignatura> asignaturas = new LinkedList<>();
+        //Set<Integer> clavesAsignaturas = new HashSet<>();
+        
         HashMap<String, Grupo> grupos = new HashMap<>();
 
         Scanner sc = new Scanner(System.in);
         
-        int selector = 0;
+        int op;
         String nombre;
         int clave;
         int opAux;
         int opAux2;
         //
         do{
-           
-          
-            switch(selector){
+            System.out.println("###  Menu Principal  ###");
+            
+            System.out.println("Actualmente cuento con: ");
+            System.out.println("\t " + Alumno.getNumAlumnos()+ " alumnos");
+            System.out.println("\t " + Profesor.getNumProfesores() + " profesores\n");
+            String[] opciones = {"Ver", "Crear", "edi"};
+            
+            /*
+            System.out.println("\t1.Crear alumno");
+            System.out.println("\t2.Crear profesor");
+            System.out.println("\t3.Crear asignatura");
+            System.out.println("\t4.Crear Grupo");
+            System.out.println("\t5.Mostrar Alumnos");
+            System.out.println("\t6.Mostrar Profesores");
+            System.out.println("\t7.Mostrar Asignaturas");
+            System.out.println("\t8.Mostrar Grupos");
+            System.out.println("\t99.Salir");
+            */
+            op = Menu.menu(opciones);
+            
+            switch(op){
                
-                case 0->{
-                
-                    System.out.println("###  Menu Principal  ###");
-
-                    System.out.println("Actualmente cuento con: ");
-                    System.out.println("\t " + alumnos.size() + " alumnos");
-                    //System.out.println("\t " + profesores.size() + " profesores");
-
-                    System.out.println("\nIndicame por favor, sobre que entidad deseas trabajar?");
-                    
-                    String[] opciones = {"Alumnos", "Profesores", "Grupos", "Asignaturas", "Sácame de aqui"};
-                    selector = Menu.menu(opciones);
-                    
-                }
-                
                 case 1->{
                     
- Desarrollo_Axel
-                    System.out.println("Ingrese el número de cuenta del alumno");
-                    long numCuenta = sc.nextLong(); 
+                    System.out.println("\n ** Alumnos ");
+                    String[] subOpciones = {"Crear alumno", "Mostrar alumno"};
+                    
+                    int ops = Menu.menu(subOpciones);
+                    
+                    System.out  .println("Ingrese el número de cuenta del alumno");
+                    long numCuenta = Long.valueOf(sc.next()); 
                     if (alumnos.containsKey(numCuenta)){
                         System.out.println("Ya existe este alumno");
                     }else{
                         System.out.println("Ingrese el nombre del alumno");
                         nombre = sc.next();
-                        Alumno alumnoNuevo = new Alumno(nombre);
-                        
-                        while(alumnoNuevo.getNombre() != null){
-                            System.out.println("Ingrese el nombre del alumno");
-                            nombre = sc.next();
-                            alumnoNuevo.setNombre(nombre);
-                        }
-                        alumnos.put(numCuenta, alumnoNuevo);
-
-                    System.out.println("\n** Alumnos ");
-                    String[] subOpciones = {"Crear alumno", "Mostrar alumno", "Modificar Alumno", "Volver"};
-                    
-                    int subSelector = Menu.menu(subOpciones);
-                        
-                    switch(subSelector){
-                        case 1 ->{
-                            System.out.println("\n* Creando Alumno");
-                            System.out.println("Ingrese los siguientes datos");
-                            System.out.print("\nNúmero de cuenta: ");
-                            long numCuenta = sc.nextLong();
-                            sc.nextLine();
-                            
-                            if(alumnos.containsKey(numCuenta)){
-                                System.out.println("Lo siento, ya existe un alumno con ese número de cuenta");
-                            }else{
-                                System.out.print("Nombre completo: ");
-                                nombre = sc.nextLine();
-                                alumnos.put(numCuenta, new Alumno(nombre));
-                            }
-                            
-                            break;
-                        }
-
+                        alumnos.put(numCuenta, new Alumno(nombre));
+                                               
                     }
-                        
                     break;
                 }
-                
-                default ->{ System.out.println("Opción no válida"); break;}
-                /*case 2->{
+                case 2->{
                     System.out.println("Ingrese el número de cuenta del profesor");
                     long numCuenta = sc.nextLong();
                     if (profesores.containsKey(numCuenta)){
@@ -105,32 +85,11 @@ public class ProyectoColeccionesEnJava {
                         
                         System.out.println("Ingrese el correo del profesor");
                         String correo = sc.next();     
-                        
-                        Profesor nuevoProfesor = new Profesor(nombre, gradoProfesor, correo);
-                        
-                        while(nuevoProfesor.getNombre() != null){
-                            System.out.println("Ingrese el nombre del profesor");
-                            nombre = sc.next();
-                            nuevoProfesor.setNombre(nombre);
-                        }
-                        
-                        while(nuevoProfesor.getCorreo() != null){
-                            System.out.println("Ingrese el correo del profesor");
-                            correo = sc.next();
-                            nuevoProfesor.setCorreo(correo);
-                        }
-                        
-                        while(nuevoProfesor.getGradoAcademico() != null){
-                            System.out.println("Ingrese el grado académico del profesor");
-                            gradoProfesor = sc.next();
-                            nuevoProfesor.setGradoAcademico(gradoProfesor);
-                        }
-                        
-                        profesores.put(numCuenta, nuevoProfesor);
+                        profesores.put(numCuenta, new Profesor(nombre, gradoProfesor, correo));
                     
-                    }*/
+                    }
                 }
-                /*case 3 -> {
+                case 3 -> {
                     System.out.println("Ingrese la clave de la asignatura");
                     clave = sc.nextInt();
                     if (asignaturas.containsKey(clave)){
@@ -144,31 +103,12 @@ public class ProyectoColeccionesEnJava {
                         
                         System.out.println("Ingrese el semestre de la asignatura");
                         int semestre = sc.nextInt();
-                        Asignatura nuevaAsignatura = new Asignatura(nombre, area, semestre);
                         
-                        while(nuevaAsignatura.getNombre() != null){
-                            System.out.println("Ingrese el nombre de la asignatura");
-                            nombre = sc.next();
-                            nuevaAsignatura.setNombre(nombre);
-                        }
-                        
-                        while(nuevaAsignatura.getArea() != null){
-                            System.out.println("Ingrese el area de la asignatura");
-                            area = sc.next();
-                            nuevaAsignatura.setArea(area);
-                        }
-                        
-                        while(nuevaAsignatura.getSemestre() != 0){
-                            System.out.println("Ingrese el semestre de la asignatura");
-                            semestre = sc.nextInt();
-                            nuevaAsignatura.setSemestre(semestre);
-                        }
-                        
-                        asignaturas.put(clave, nuevaAsignatura);
+                        asignaturas.put(clave, new Asignatura(nombre, area, semestre, clave));
+
                     }
                     break;
                 }
-            
                 case 4 -> {
                     if(profesores.size() <= 0 || asignaturas.size() <= 0){
                         System.out.println("No hay profesores registrados o asignaturas registradas");
@@ -191,30 +131,28 @@ public class ProyectoColeccionesEnJava {
                             opAux2 = sc.nextInt();
                             System.out.println("Ingrese la clave del grupo");
                             clave = sc.nextInt();
-                            String claveGrupo = asignaturas.get(asignaturasKeys[opAux - 1]).getNombre() + Integer.toString(clave);
-                            
-                            while(grupos.containsKey(claveGrupo)){
-                                System.out.println("Ya existe este grupo");
-                                System.out.println("Ingrese la clave del grupo");
-                                clave = sc.nextInt();
-                                claveGrupo = asignaturas.get(asignaturasKeys[opAux - 1]).getNombre() + Integer.toString(clave);
-                            }
 
-                            System.out.println("Ingrese el horario de la asignatura");
-                            //Calendar[] horario = funcionCrearHorario -> Horario [[dia1,horainicio1,horafin1],[dia2,horainicio2,horafin2],...,[dia n,horainicio n,horafin n]]
-                            //grupos.put(claveGrupo, new Grupo( asignaturas.get(asignaturasKeys[opAux2 - 1]), clave, horario, profesores.get(profesoresKeys[opAux - 1])));
-                            profesores.get(profesoresKeys[opAux - 1]).addClaveGrupo(claveGrupo);
-                            asignaturas.get(asignaturasKeys[opAux2 - 1]).addClaveGrupo(claveGrupo);
+                            String claveGrupo = asignaturas.get(asignaturasKeys[opAux - 1]).getNombre() + Integer.toString(clave);
+
+                            if(grupos.containsKey(claveGrupo)){
+                                System.out.println("Ya existe este grupo");
+                            }else{
+                                System.out.println("Ingrese el horario de la asignatura");
+                                //Calendar[] horario = funcionCrearHorario -> Horario [[dia1,horainicio1,horafin1],[dia2,horainicio2,horafin2],...,[dia n,horainicio n,horafin n]]
+                                //grupos.put(claveGrupo, new Grupo( asignaturas.get(asignaturasKeys[opAux2 - 1]), clave, horario, profesores.get(profesoresKeys[opAux - 1])));
+                                profesores.get(profesoresKeys[opAux - 1]).addClaveGrupo(claveGrupo);
+                                asignaturas.get(asignaturasKeys[opAux2 - 1]).addClaveGrupo(claveGrupo);
+                            }
                         }else{
                             System.out.println("Este profesor no puede dar más asignaturas");
                         }
                     }
                     break;
-                }*/
-                
+                }
+                default ->{ System.out.println("Opción no válida"); break;}
                     
-           
-        }while(selector != 99);
+            }
+        }while(op != 99);
     }
     
 }
