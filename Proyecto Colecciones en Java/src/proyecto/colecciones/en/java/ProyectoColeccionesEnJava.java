@@ -1,15 +1,12 @@
 package proyecto.colecciones.en.java;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.io.IOException; 
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class ProyectoColeccionesEnJava { 
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
         //Hashtable key = #cuenta, value = alumno || clave, asignatura
         HashMap<Long,Alumno> alumnos = new HashMap<>();
@@ -34,6 +31,13 @@ public class ProyectoColeccionesEnJava {
         //
         do{
             System.out.println("###  Menu Principal  ###");
+            
+            System.out.println("Actualmente cuento con: ");
+            System.out.println("\t " + Alumno.getNumAlumnos()+ " alumnos");
+            System.out.println("\t " + Profesor.getNumProfesores() + " profesores\n");
+            String[] opciones = {"Ver", "Crear", "edi"};
+            
+            /*
             System.out.println("\t1.Crear alumno");
             System.out.println("\t2.Crear profesor");
             System.out.println("\t3.Crear asignatura");
@@ -43,15 +47,19 @@ public class ProyectoColeccionesEnJava {
             System.out.println("\t7.Mostrar Asignaturas");
             System.out.println("\t8.Mostrar Grupos");
             System.out.println("\t99.Salir");
-
-            op = sc.nextInt();
+            */
+            op = Menu.menu(opciones);
             
             switch(op){
                
                 case 1->{
                     
-                   
-                    System.out.println("Ingrese el número de cuenta del alumno");
+                    System.out.println("\n ** Alumnos ");
+                    String[] subOpciones = {"Crear alumno", "Mostrar alumno"};
+                    
+                    int ops = Menu.menu(subOpciones);
+                    
+                    System.out  .println("Ingrese el número de cuenta del alumno");
                     long numCuenta = Long.valueOf(sc.next()); 
                     if (alumnos.containsKey(numCuenta)){
                         System.out.println("Ya existe este alumno");
