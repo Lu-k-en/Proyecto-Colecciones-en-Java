@@ -7,10 +7,9 @@ public class Alumno {
     private String[] clavesGrupos = new String[3];
     private static int numAlumnos = 0;
     
-    public Alumno (String nombre, long numeroCuenta){
+    public Alumno (String nombre){
         numAlumnos++;
         setNombre(nombre);
-        setNumeroCuenta(numeroCuenta);
     }
     
     public String getNombre() {
@@ -20,15 +19,7 @@ public class Alumno {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    public long getNumeroCuenta() {
-        return numeroCuenta;
-    }
-    
-    public void setNumeroCuenta(long numeroCuenta) {
-        this.numeroCuenta = numeroCuenta;
-    }
-    
+   
     public String[] getClavesGrupos() {
         return clavesGrupos;
     }
@@ -41,7 +32,6 @@ public class Alumno {
     
     public void imprimeAlumno(){
         System.out.println("\tNombre del Alumno: "+getNombre());
-        System.out.println("\tNúmero de Cuenta: "+getNumeroCuenta());
     }
     
     public void imprimeClavesGrupos(){
