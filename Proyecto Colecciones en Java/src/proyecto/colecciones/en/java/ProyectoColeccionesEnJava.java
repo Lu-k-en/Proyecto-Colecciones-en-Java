@@ -27,7 +27,7 @@ public class ProyectoColeccionesEnJava {
         int clave;
         int opAux;
         int opAux2;
-        
+        //
         do{
             System.out.println("###  Menu Principal  ###");
             System.out.println("\t1.Crear alumno");
