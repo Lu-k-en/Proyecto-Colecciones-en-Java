@@ -1,24 +1,37 @@
 package proyecto.colecciones.en.java;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Profesor {
     private String gradoAcademico;
     private String nombre;
     private String correo;
-    private int gruposInscritos = 0;
-    private String[] claveGrupos = new String[5];
-    private static int numProfesores=0;
+    
+    // private int gruposInscritos = 0; // Podemos saber el número de grupos inscritos según el tamaño de la lista clavesGrupos
+    
+    private List<String> claveGrupos = new LinkedList<>();
+
     
     public Profesor(String nombre, String gradoAcademico, String correo){
-        numProfesores++;
         setNombre(nombre);
         setGradoAcademico(gradoAcademico);
         setCorreo(correo);
+        
+    }
+   
+    // Modificar para agregar a la lista 
+
+    
+    public void imprimeProfesor(){
+        System.out.println("\tNombre del Profesor: "+nombre);
+        System.out.println("\tGrado Académico: "+gradoAcademico);
+        System.out.println("\tCorreo de contacto: "+correo);
     }
     
-    public int getGruposInscritos(){
-        return gruposInscritos;
-    }
-       
+    
+    // Modificar para imprimir las claves de la lista
+  
     public String getGradoAcademico() {
         return gradoAcademico;
     }
@@ -50,6 +63,7 @@ public class Profesor {
     }
     
     public void setCorreo(String correo) {
+Desarrollo_Axel
         if(correo.contains("@")){
             this.correo = correo;
         }else{
@@ -91,10 +105,9 @@ public class Profesor {
             }
         }
     }
-    
-    public void addClaveGrupo(String ClaveGrupo){
-        this.claveGrupos[gruposInscritos] = ClaveGrupo;
-        gruposInscritos++;
+
+        this.correo = correo;
+
     }
     
 }

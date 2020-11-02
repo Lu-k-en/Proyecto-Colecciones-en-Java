@@ -3,6 +3,10 @@ package proyecto.colecciones.en.java;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Calendar;
+import java.util.Hashtable;
+import java.util.Iterator;
+
+
 
 public class Grupo {
     private Set<Long> alumnosInscritos = new HashSet<>();
@@ -50,6 +54,8 @@ public class Grupo {
         return clave;
     }
     
+
+    
     public boolean addAlumno(long numCuenta){
         if(alumnosInscritos.contains(numCuenta)){
             System.out.println("Este alumno ya esta registrado en este grupo");
@@ -60,4 +66,21 @@ public class Grupo {
         }
     }
     
+    public void imprimirListaGrupo(Hashtable<Long,Alumno> alumnos){  
+        
+        System.out.println("** Esta es la lista de alumnos inscritos: ");
+        
+        if (alumnosInscritos.isEmpty()) {
+            System.out.println("No hay ningún alumno inscrito");
+        }else{
+            
+            Iterator<Long> alumnosIterable = alumnosInscritos.iterator();
+            
+            for (int i = 0; i < alumnosInscritos.size(); i++) {
+                long numCuentaSiguiente = alumnosIterable.next();
+                System.out.println("\t" + (i+1) + ") " + alumnos.get(numCuentaSiguiente).getNombre());
+                
+            }
+        }
+    }
 }

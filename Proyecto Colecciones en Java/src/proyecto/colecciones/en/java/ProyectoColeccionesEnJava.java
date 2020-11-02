@@ -1,55 +1,50 @@
 package proyecto.colecciones.en.java;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.io.IOException; 
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class ProyectoColeccionesEnJava { 
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
         //Hashtable key = #cuenta, value = alumno || clave, asignatura
         HashMap<Long,Alumno> alumnos = new HashMap<>();
-        HashMap<Long,Profesor> profesores = new HashMap<>();
-        HashMap<Integer,Asignatura> asignaturas = new HashMap<>();
-        
-        //Hashtable<Integer, Asignatura> asignaturas = new Hashtable<>();
-        //Set<Long> numerosCuenta = new HashSet<>();
-        
-        //List<Asignatura> asignaturas = new LinkedList<>();
-        //Set<Integer> clavesAsignaturas = new HashSet<>();
-        
+        //HashMap<Long,Profesor> profesores = new HashMap<>();
+        HashMap<Integer,Asignatura> asignaturas = new HashMap<>(); 
         HashMap<String, Grupo> grupos = new HashMap<>();
 
         Scanner sc = new Scanner(System.in);
         
-        int op;
+        int selector = 0;
         String nombre;
         int clave;
         int opAux;
         int opAux2;
         //
         do{
-            System.out.println("###  Menu Principal  ###");
-            System.out.println("\t1.Crear alumno");
-            System.out.println("\t2.Crear profesor");
-            System.out.println("\t3.Crear asignatura");
-            System.out.println("\t4.Crear Grupo");
-            System.out.println("\t5.Mostrar Alumnos");
-            System.out.println("\t6.Mostrar Profesores");
-            System.out.println("\t7.Mostrar Asignaturas");
-            System.out.println("\t8.Mostrar Grupos");
-            System.out.println("\t99.Salir");
-
-            op = sc.nextInt();
-            
-            switch(op){
+           
+          
+            switch(selector){
                
+                case 0->{
+                
+                    System.out.println("###  Menu Principal  ###");
+
+                    System.out.println("Actualmente cuento con: ");
+                    System.out.println("\t " + alumnos.size() + " alumnos");
+                    //System.out.println("\t " + profesores.size() + " profesores");
+
+                    System.out.println("\nIndicame por favor, sobre que entidad deseas trabajar?");
+                    
+                    String[] opciones = {"Alumnos", "Profesores", "Grupos", "Asignaturas", "Sácame de aqui"};
+                    selector = Menu.menu(opciones);
+                    
+                }
+                
                 case 1->{
                     
+ Desarrollo_Axel
                     System.out.println("Ingrese el número de cuenta del alumno");
                     long numCuenta = sc.nextLong(); 
                     if (alumnos.containsKey(numCuenta)){
@@ -65,9 +60,38 @@ public class ProyectoColeccionesEnJava {
                             alumnoNuevo.setNombre(nombre);
                         }
                         alumnos.put(numCuenta, alumnoNuevo);
+
+                    System.out.println("\n** Alumnos ");
+                    String[] subOpciones = {"Crear alumno", "Mostrar alumno", "Modificar Alumno", "Volver"};
+                    
+                    int subSelector = Menu.menu(subOpciones);
+                        
+                    switch(subSelector){
+                        case 1 ->{
+                            System.out.println("\n* Creando Alumno");
+                            System.out.println("Ingrese los siguientes datos");
+                            System.out.print("\nNúmero de cuenta: ");
+                            long numCuenta = sc.nextLong();
+                            sc.nextLine();
+                            
+                            if(alumnos.containsKey(numCuenta)){
+                                System.out.println("Lo siento, ya existe un alumno con ese número de cuenta");
+                            }else{
+                                System.out.print("Nombre completo: ");
+                                nombre = sc.nextLine();
+                                alumnos.put(numCuenta, new Alumno(nombre));
+                            }
+                            
+                            break;
+                        }
+
                     }
+                        
+                    break;
                 }
-                case 2->{
+                
+                default ->{ System.out.println("Opción no válida"); break;}
+                /*case 2->{
                     System.out.println("Ingrese el número de cuenta del profesor");
                     long numCuenta = sc.nextLong();
                     if (profesores.containsKey(numCuenta)){
@@ -104,9 +128,9 @@ public class ProyectoColeccionesEnJava {
                         
                         profesores.put(numCuenta, nuevoProfesor);
                     
-                    }
+                    }*/
                 }
-                case 3 -> {
+                /*case 3 -> {
                     System.out.println("Ingrese la clave de la asignatura");
                     clave = sc.nextInt();
                     if (asignaturas.containsKey(clave)){
@@ -144,6 +168,7 @@ public class ProyectoColeccionesEnJava {
                     }
                     break;
                 }
+            
                 case 4 -> {
                     if(profesores.size() <= 0 || asignaturas.size() <= 0){
                         System.out.println("No hay profesores registrados o asignaturas registradas");
@@ -185,11 +210,11 @@ public class ProyectoColeccionesEnJava {
                         }
                     }
                     break;
-                }
-                default ->{ System.out.println("Opción no válida"); break;}
+                }*/
+                
                     
-            }
-        }while(op != 99);
+           
+        }while(selector != 99);
     }
     
 }
