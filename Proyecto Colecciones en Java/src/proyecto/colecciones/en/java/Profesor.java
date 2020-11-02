@@ -1,8 +1,5 @@
 package proyecto.colecciones.en.java;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Profesor {
     private String gradoAcademico;
     private String nombre;
