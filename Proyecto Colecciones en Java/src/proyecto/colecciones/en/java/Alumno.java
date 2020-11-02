@@ -5,10 +5,8 @@ public class Alumno {
     private long numeroCuenta;
     private int gruposInscritos = 0;
     private String[] clavesGrupos = new String[3];
-    private static int numAlumnos = 0;
     
     public Alumno (String nombre){
-        numAlumnos++;
         setNombre(nombre);
     }
     
@@ -50,10 +48,7 @@ public class Alumno {
         gruposInscritos++;
     }
 
-    public static int getNumAlumnos() {
-        return numAlumnos;
-    }
-    
+ 
     
     
 }
