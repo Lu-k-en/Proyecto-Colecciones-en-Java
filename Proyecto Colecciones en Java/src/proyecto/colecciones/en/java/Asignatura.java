@@ -7,22 +7,12 @@ public class Asignatura {
     private String nombre;
     private String area;
     private int semestre;
-    private int clave;
     private List<String> clavesGrupos;
     
-    public Asignatura(String nombre, String area, int semestre, int clave){
+    public Asignatura(String nombre, String area, int semestre){
         setNombre(nombre);
         setArea(area);
         setSemestre(semestre);
-        setClave(clave);
-    }
-    
-    public int getClave() {
-        return clave;
-    }
-    
-    public void setClave(int clave) {
-        this.clave = clave;
     }
     
     public String getNombre() {
@@ -30,7 +20,12 @@ public class Asignatura {
     }
     
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if (nombre.length() > 1 && nombre.length() < 20) {
+            this.nombre = nombre;
+        } else {
+            System.out.println("El nombre debe tener al menos 2 caracteres y menos de 20");
+            this.nombre = null;
+        }
     }
     
     public String getArea() {
@@ -38,7 +33,12 @@ public class Asignatura {
     }
     
     public void setArea(String area) {
-        this.area = area;
+        if (area.length() > 2 && area.length() < 5 && area.charAt(0) == 'D') {
+            this.area = area;
+        } else {
+            System.out.println("El area debe de comenzar con la letra D y tener entre 2 y 5 caracteres");
+            this.area = null;
+        }
     }
     
     public Profesor getProfesorAsignado() {
@@ -54,7 +54,12 @@ public class Asignatura {
     }
     
     public void setSemestre(int semestre) {
-        this.semestre = semestre;
+        if(semestre < 10 && semestre > 0){
+            this.semestre = semestre;
+        }else{
+            this.semestre = 0;
+            System.out.println("El semestre debe de ser un número entre 1 y 10");
+        }
     }
     
     public List<String> getClavesGrupos() {
@@ -69,7 +74,6 @@ public class Asignatura {
         System.out.println("\tNombre de la asignatura: "+getNombre());
         System.out.println("\tArea: "+getArea());
         System.out.println("\tSemestre: "+getSemestre());
-        System.out.println("\tClave: "+getClave());
     }
     
     
