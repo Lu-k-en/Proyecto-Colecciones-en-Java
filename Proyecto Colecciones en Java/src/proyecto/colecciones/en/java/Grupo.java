@@ -5,7 +5,7 @@ import java.util.Set;
 import java.util.Calendar;
 
 public class Grupo {
-    private Set<Long> numCuenta = new HashSet<>();
+    private Set<Long> alumnosInscritos = new HashSet<>();
     private Asignatura asignatura;
     private String clave;
     private Calendar[] horario;
@@ -50,12 +50,12 @@ public class Grupo {
         return clave;
     }
     
-    public boolean addAlumno(Alumno alumno){
-        if(numCuenta.contains(alumno.getNumeroCuenta())){
+    public boolean addAlumno(long numCuenta){
+        if(alumnosInscritos.contains(numCuenta)){
             System.out.println("Este alumno ya esta registrado en este grupo");
             return false;
         }else{
-            numCuenta.add(alumno.getNumeroCuenta());
+            alumnosInscritos.add(numCuenta);
             return true;
         }
     }

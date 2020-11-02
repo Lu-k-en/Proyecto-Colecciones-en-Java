@@ -1,13 +1,9 @@
 package proyecto.colecciones.en.java;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Profesor {
     private String gradoAcademico;
     private String nombre;
     private String correo;
-    private long numCuentaProfesor;
     private int gruposInscritos = 0;
     private String[] claveGrupos = new String[5];
     private static int numProfesores=0;
@@ -22,15 +18,7 @@ public class Profesor {
     public int getGruposInscritos(){
         return gruposInscritos;
     }
-    
-    public long getNumCuentaProfesor(){
-        return numCuentaProfesor;
-    }
-    
-    public void setNumCuentaProfesor(long numCuentaProfesor){
-        this.numCuentaProfesor = numCuentaProfesor;
-    }
-    
+       
     public String getGradoAcademico() {
         return gradoAcademico;
     }
