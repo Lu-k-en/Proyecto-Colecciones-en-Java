@@ -51,7 +51,7 @@ public class ProyectoColeccionesEnJava {
                     
                    
                     System.out.println("Ingrese el número de cuenta del alumno");
-                    long numCuenta = sc.nextLong(); 
+                    long numCuenta = Long.valueOf(sc.next()); 
                     if (alumnos.containsKey(numCuenta)){
                         System.out.println("Ya existe este alumno");
                     }else{
@@ -59,7 +59,9 @@ public class ProyectoColeccionesEnJava {
                         nombre = sc.next();
                        
                         alumnos.put(numCuenta, new Alumno(nombre));
+                                               
                     }
+                    break;
                 }
                 case 2->{
                     System.out.println("Ingrese el número de cuenta del profesor");
