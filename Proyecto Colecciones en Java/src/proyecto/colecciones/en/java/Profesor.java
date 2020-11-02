@@ -10,7 +10,7 @@ public class Profesor {
     
     // private int gruposInscritos = 0; // Podemos saber el número de grupos inscritos según el tamaño de la lista clavesGrupos
     
-    private List<String[]> claveGrupos = new LinkedList<>();
+    private List<String> claveGrupos = new LinkedList<>();
 
     
     public Profesor(String nombre, String gradoAcademico, String correo){
@@ -21,7 +21,7 @@ public class Profesor {
     }
    
     // Modificar para agregar a la lista 
-   
+
     
     public void imprimeProfesor(){
         System.out.println("\tNombre del Profesor: "+nombre);
@@ -31,26 +31,7 @@ public class Profesor {
     
     
     // Modificar para imprimir las claves de la lista
-   /* public void imprimeClaveGrupos(){
-        if(claveGrupos == null || claveGrupos.length == 0){  
-            System.out.println("No imparte ninguna asignatura");
-        
-        } else { 
-            System.out.println("Las Claves de las Asignaturas que imparte: ");
-            for (String i: claveGrupos) {
-                System.out.println(" - "+i);
-            }
-        }
-    }
-   
-    
-    //Modificar para agregar a lista, recibe un long numCuenta
-    public void addClaveGrupo(long ClaveGrupo){
-       if(claveGrupos.size() > 5){
-           claveGrupos.add(ClaveGrupo);
-       }
-    }
-       */    
+  
     public String getGradoAcademico() {
         return gradoAcademico;
     }
