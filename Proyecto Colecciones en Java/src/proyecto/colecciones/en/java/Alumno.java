@@ -1,24 +1,24 @@
 package proyecto.colecciones.en.java;
 
 public class Alumno {
-    private String Nombre;
+    private String nombre;
     private long numeroCuenta;
     private int gruposInscritos = 0;
     private String[] clavesGrupos = new String[3];
-    private static int numAlumnos=0;
+    private static int numAlumnos = 0;
     
-    public Alumno (String Nombre, long numeroCuenta){
+    public Alumno (String nombre, long numeroCuenta){
         numAlumnos++;
-        setNombre(Nombre);
+        setNombre(nombre);
         setNumeroCuenta(numeroCuenta);
     }
     
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
     
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
     public long getNumeroCuenta() {
@@ -40,13 +40,13 @@ public class Alumno {
     }
     
     public void imprimeAlumno(){
-        System.out.println("Nombre del Alumno: "+getNombre());
-        System.out.println("Número de Cuenta: "+getNumeroCuenta());
+        System.out.println("\tNombre del Alumno: "+getNombre());
+        System.out.println("\tNúmero de Cuenta: "+getNumeroCuenta());
     }
     
     public void imprimeClavesGrupos(){
         if(clavesGrupos == null || clavesGrupos.length == 0){  
-            System.out.println("No está inscrito a ninguna Asigantura");
+            System.out.println("No está inscrito a ninguna asignatura");
         } else { 
             System.out.println("Las Claves de las Asignaturas a las que está inscrito: ");
             for (String i: clavesGrupos) {
@@ -55,8 +55,8 @@ public class Alumno {
         }
     }
     
-    public void addClaveGrupos(String ClaveGrupo){
-        this.clavesGrupos[gruposInscritos] = ClaveGrupo;
+    public void addClaveGrupo(String claveGrupo){
+        this.clavesGrupos[gruposInscritos] = claveGrupo;
         gruposInscritos++;
     }
 }

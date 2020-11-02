@@ -5,18 +5,18 @@ import java.util.List;
 
 public class Profesor {
     private String gradoAcademico;
-    private String Nombre;
-    private String Correo;
-    private long NumCuentaProfesor;
+    private String nombre;
+    private String correo;
+    private long numCuentaProfesor;
     private int gruposInscritos = 0;
-    private String[] ClaveGrupos = new String[5];
+    private String[] claveGrupos = new String[5];
     private static int numProfesores=0;
     
-    public Profesor(String Nombre, String gradoAcademico, String Correo){
+    public Profesor(String nombre, String gradoAcademico, String correo){
         numProfesores++;
-        setNombre(Nombre);
+        setNombre(nombre);
         setGradoAcademico(gradoAcademico);
-        setCorreo(Correo);
+        setCorreo(correo);
     }
     
     public int getGruposInscritos(){
@@ -24,11 +24,11 @@ public class Profesor {
     }
     
     public long getNumCuentaProfesor(){
-        return NumCuentaProfesor;
+        return numCuentaProfesor;
     }
     
-    public void setNumCuentaProfesor(long NumCuentaProfesor){
-        this.NumCuentaProfesor=NumCuentaProfesor;
+    public void setNumCuentaProfesor(long numCuentaProfesor){
+        this.numCuentaProfesor = numCuentaProfesor;
     }
     
     public String getGradoAcademico() {
@@ -40,19 +40,19 @@ public class Profesor {
     }
     
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
     
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
     public String getCorreo() {
-        return Correo;
+        return correo;
     }
     
-    public void setCorreo(String Correo) {
-        this.Correo = Correo;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
     
     public static int getNumProfesores(){
@@ -60,37 +60,37 @@ public class Profesor {
     }
     
     public String[] getClaveGrupos() {
-        return ClaveGrupos;
+        return claveGrupos;
     }
     
-    public void setClaveGrupos(String ClaveGrupo1, String ClaveGrupo2, String ClaveGrupo3, String ClaveGrupo4, String ClaveGrupo5) {
-        this.ClaveGrupos[0] = ClaveGrupo1;
-        this.ClaveGrupos[1] = ClaveGrupo2;
-        this.ClaveGrupos[2] = ClaveGrupo3;
-        this.ClaveGrupos[3] = ClaveGrupo4;
-        this.ClaveGrupos[4] = ClaveGrupo5;
+    public void setClaveGrupos(String claveGrupo1, String claveGrupo2, String claveGrupo3, String claveGrupo4, String claveGrupo5) {
+        this.claveGrupos[0] = claveGrupo1;
+        this.claveGrupos[1] = claveGrupo2;
+        this.claveGrupos[2] = claveGrupo3;
+        this.claveGrupos[3] = claveGrupo4;
+        this.claveGrupos[4] = claveGrupo5;
     }
     
     public void imprimeProfesor(){
-        System.out.println("Nombre del Profesor: "+Nombre);
-        System.out.println("Grado Académico: "+gradoAcademico);
-        System.out.println("Correo de contacto: "+Correo);
+        System.out.println("\tNombre del Profesor: "+nombre);
+        System.out.println("\tGrado Académico: "+gradoAcademico);
+        System.out.println("\tCorreo de contacto: "+correo);
     }
     
     public void imprimeClaveGrupos(){
-        if(ClaveGrupos == null || ClaveGrupos.length == 0){  
+        if(claveGrupos == null || claveGrupos.length == 0){  
             System.out.println("No imparte ninguna asignatura");
         
         } else { 
             System.out.println("Las Claves de las Asignaturas que imparte: ");
-            for (String i: ClaveGrupos) {
+            for (String i: claveGrupos) {
                 System.out.println(" - "+i);
             }
         }
     }
     
-    public void addClaveGrupos(String ClaveGrupo){
-        this.ClaveGrupos[gruposInscritos] = ClaveGrupo;
+    public void addClaveGrupo(String ClaveGrupo){
+        this.claveGrupos[gruposInscritos] = ClaveGrupo;
         gruposInscritos++;
     }
     
