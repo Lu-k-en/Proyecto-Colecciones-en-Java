@@ -21,13 +21,7 @@ public class Profesor {
     }
    
     // Modificar para agregar a la lista 
-    public void setClaveGrupos(String claveGrupo1, String claveGrupo2, String claveGrupo3, String claveGrupo4, String claveGrupo5) {
-        this.claveGrupos[0] = claveGrupo1;
-        this.claveGrupos[1] = claveGrupo2;
-        this.claveGrupos[2] = claveGrupo3;
-        this.claveGrupos[3] = claveGrupo4;
-        this.claveGrupos[4] = claveGrupo5;
-    }
+   
     
     public void imprimeProfesor(){
         System.out.println("\tNombre del Profesor: "+nombre);
@@ -37,7 +31,7 @@ public class Profesor {
     
     
     // Modificar para imprimir las claves de la lista
-    public void imprimeClaveGrupos(){
+   /* public void imprimeClaveGrupos(){
         if(claveGrupos == null || claveGrupos.length == 0){  
             System.out.println("No imparte ninguna asignatura");
         
@@ -48,13 +42,15 @@ public class Profesor {
             }
         }
     }
+   
     
     //Modificar para agregar a lista, recibe un long numCuenta
-    public void addClaveGrupo(String ClaveGrupo){
-        this.claveGrupos[gruposInscritos] = ClaveGrupo;
-        gruposInscritos++;
+    public void addClaveGrupo(long ClaveGrupo){
+       if(claveGrupos.size() > 5){
+           claveGrupos.add(ClaveGrupo);
+       }
     }
-           
+       */    
     public String getGradoAcademico() {
         return gradoAcademico;
     }
