@@ -36,7 +36,7 @@
   <p align="center">
     Primer proyecto de la materia de programación orientada a objetos | FI, UNAM
     <br />
-    <a href="https://thequetz.github.io/Proyecto-Colecciones-en-Java/">Manual de usuario >></a>
+    <a href="https://github.com/TheQuetz/Proyecto-Colecciones-en-Java/wiki">Manual de usuario >></a>
   </p>
 </p>
 
@@ -46,75 +46,28 @@
 ## Tabla de contenidos
 
 * [Sobre el proyecto](#sobre-el-proyecto)
-  * [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Roadmap](#roadmap)
-* [Contributing](#contributing)
-* [License](#license)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
-
+* [Uso](#uso)
+* [Contacto](#contact)
 
 
 <!-- ABOUT THE PROJECT -->
 ## Sobre el proyecto
   Este proyecto tiene como objetivo implementar y analizar el uso de las diferentes colecciones disponibles en Java. El programa simula un sistema escolar de inscripciones. 
-
-### Built With
-
-* []()
-* []()
-* []()
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-To get a local copy up and running follow these simple steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
-```
-
-
-
-
+ 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Uso
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Para información detallada respecto al uso de este programa visita nuestro <a href="https://github.com/TheQuetz/Proyecto-Colecciones-en-Java/wiki">Manual de usuario</a>. En él se detalla como clonar el proyecto y ejecutarlo en el entorno de desarrollo NetBeans, así como una guía general de uso.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
+Para detalles sobre las clases que integran este proyecto visita nuetra <a href="https://thequetz.github.io/Proyecto-Colecciones-en-Java/">Documentación</a>
 
 <!-- CONTACT -->
-## Contact
+## Contacto
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
-
-Project Link: [https://github.com/TheQuetz/Proyecto-Colecciones-en-Java](https://github.com/TheQuetz/Proyecto-Colecciones-en-Java)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
-
-
-
+Axel Nuñez []
+Osiris Martinez [] - 
+Luis Rosales [TheQuetz] - theQuetz@protonmail.com
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
