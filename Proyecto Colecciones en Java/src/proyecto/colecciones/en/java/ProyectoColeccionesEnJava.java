@@ -39,22 +39,22 @@ public class ProyectoColeccionesEnJava {
                 }
                 
                 case 1->{
-                    Utilerias.menuAlumno(alumnos, grupos, selector);
+                    selector = Utilerias.menuAlumno(alumnos, grupos);
                     break;
                 }
                 
                 case 2 -> {
-                    Utilerias.menuProfesores(profesores, grupos, selector);
+                     selector = Utilerias.menuProfesores(profesores, grupos);
                     break;
                 }
                 
                 case 3 -> {
-                    Utilerias.menuAsignaturas(asignaturas, grupos, selector);
+                     selector = Utilerias.menuAsignaturas(asignaturas, grupos);
                     break;
                 }
                 
                 case 4 -> {
-                    Utilerias.menuGrupos(grupos, asignaturas, profesores, alumnos, selector);
+                     selector = Utilerias.menuGrupos(grupos, asignaturas, profesores, alumnos);
                     break;
                 }
                 
