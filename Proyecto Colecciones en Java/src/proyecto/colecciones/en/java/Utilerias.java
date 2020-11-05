@@ -7,6 +7,9 @@ import java.util.List;
 /**
  * Clase Utilerias, no modela ningún tipo de dato abstracto en específico.
  * Es solo un compendio de utilerias varias usadas a lo largo del proyecto.
+ * @author Nuñez Quintana, Luis Axel
+ * @author Martínez Olmos, Osiris
+ * @author Rosales Lopez, Luis André
  */
 
 
@@ -45,7 +48,13 @@ public class Utilerias{
         return opcion;         
     }
     
-    
+    /**
+     * Método para trabajar datos de tipo alumno. Asegura la correcta creación y relación del objeto.
+     * 
+     * @param alumnos HashMap para almacenar alumnos y relacionarlos con su número de cuenta
+     * @param grupos HashMap para almacenar los grupos creados, es utilizado para mostrar los grupos de un alumno
+     * @return valor entero para el manejo de su menú padre
+     */
     public static int menuAlumno(HashMap<Long,Alumno> alumnos, HashMap<String,Grupo> grupos){
         String nombre;
         Scanner sc = new Scanner(System.in);
@@ -137,7 +146,13 @@ public class Utilerias{
         return 1;
     }
     
-    
+     /**
+     * Método para trabajar datos de tipo profesor. Asegura la correcta creación y relación del objeto.
+     * 
+     * @param profesores HashMap para almacenar profesores y relacionarlos con su número de cuenta
+     * @param grupos HashMap para almacenar los grupos creados, es utilizado para mostrar los grupos de un profesor
+     * @return valor entero para el manejo de su menú padre
+     */
     public static int menuProfesores(HashMap<Long, Profesor> profesores, HashMap<String, Grupo> grupos){
         Scanner sc = new Scanner(System.in);
         String nombre, correo, gradoAcademico;
@@ -246,6 +261,13 @@ public class Utilerias{
         return 2;
     }
     
+    /**
+     * Método para trabajar datos de tipo asignatura. Asegura la correcta creación y relación del objeto.
+     * 
+     * @param asignaturas HashMap para almacenar asignaturas y relacionarlos con su clave
+     * @param grupos HashMap para almacenar los grupos creados, es utilizado para mostrar los grupos de una asignatura
+     * @return valor entero para el manejo de su menú padre
+     */
     public static int menuAsignaturas(HashMap<Integer, Asignatura> asignaturas, HashMap<String, Grupo> grupos){
         Scanner sc = new Scanner(System.in);
         int clave, semestre;
@@ -311,11 +333,15 @@ public class Utilerias{
                 if (asignaturas.containsKey(clave)) {
                     asignaturas.get(clave).printAsignatura();
                     List<String> clases = asignaturas.get(clave).getClavesGrupos();
-                    if (clases == null) {
+                    if (clases.isEmpty()) {
                         System.out.println("Esta asignatura no tiene grupos");
                     } else {
                         for (String var : clases) {
-                            grupos.get(var).printGrupo();
+                            if (grupos.containsKey(var)) {
+                                grupos.get(var).printGrupo();
+                            } else {
+                                break;
+                            }
                         }
                     }
                 } else {
@@ -351,6 +377,15 @@ public class Utilerias{
         return 3;
     }
     
+    /**
+     * Método para trabajar datos de tipo grupo. Asegura la correcta creación y relación del objeto.
+     * 
+     * @param grupos HashMap para almacenar gruposy relacionarlos con su clave de grupo (nombre de asignatura + clave grupo)
+     * @param asignaturas HashMap para almacenar las asignaturas creadas, es utilizado para crear un grupo de una asignatura
+     * @param profesores HashMap para almacenar los profesores creados, es utilizado para asignar un profesor a un grupo
+     * @param alumnos HashMap para almacenar los alumnos creados, es utilizado para inscribir un alumno a un grupo
+     * @return valor entero para el manejo de su menú padre
+     */
     public static int menuGrupos(HashMap<String, Grupo> grupos, HashMap<Integer, Asignatura> asignaturas, HashMap<Long,Profesor> profesores, HashMap<Long,Alumno> alumnos){
         Scanner sc = new Scanner(System.in);
         int opAux, opAux2;

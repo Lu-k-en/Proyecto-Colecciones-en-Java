@@ -7,7 +7,7 @@ import java.util.Iterator;
 
 
 /**
- * CLase Grupo,  modela al objeto grupo escolar.
+ * Clase Grupo,  modela al objeto grupo escolar.
  * 
  * Cuenta con los siguientes atributos:
  * 
