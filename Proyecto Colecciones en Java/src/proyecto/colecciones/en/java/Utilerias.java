@@ -83,8 +83,9 @@ public class Utilerias{
                     while (nuevoAlumno.getNombre() == null) {
                         System.out.print("Nombre completo: ");
                         nombre = sc.nextLine();
+                        nuevoAlumno.setNombre(nombre);
                     }
-
+                    
                     alumnos.put(numCuenta, nuevoAlumno);
                 }
 
@@ -201,6 +202,7 @@ public class Utilerias{
                         gradoAcademico = sc.nextLine();
                         nuevoProfesor.setGradoAcademico(gradoAcademico);
                     }
+                    
                     profesores.put(numCuenta, nuevoProfesor);
                 }
 
