@@ -66,9 +66,11 @@ Para detalles sobre las clases que integran este proyecto visita nuetra <a href=
 ## Contacto
 
 Axel Nuñez []
+<br />
 Osiris Martinez [] - 
+<br />
 Luis Rosales [TheQuetz] - theQuetz@protonmail.com
-
+<br />
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
