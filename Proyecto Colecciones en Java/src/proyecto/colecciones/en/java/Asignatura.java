@@ -1,9 +1,9 @@
 package proyecto.colecciones.en.java;
 
 import java.util.List;
+import java.util.LinkedList;
 
 public class Asignatura {
-    private Profesor profesorAsignado;
     private String nombre;
     private String area;
     private int semestre;
@@ -13,6 +13,7 @@ public class Asignatura {
         setNombre(nombre);
         setArea(area);
         setSemestre(semestre);
+        clavesGrupos = new LinkedList<>();
     }
     
     public String getNombre() {
@@ -41,14 +42,6 @@ public class Asignatura {
         }
     }
     
-    public Profesor getProfesorAsignado() {
-        return profesorAsignado;
-    }
-    
-    public void setProfesorAsignado(Profesor profesorAsignado) {
-        this.profesorAsignado = profesorAsignado;
-    }
-    
     public int getSemestre() {
         return semestre;
     }
@@ -66,8 +59,8 @@ public class Asignatura {
         return clavesGrupos;
     }
     
-    public void addClaveGrupo(String clavesGrupos) {
-        this.clavesGrupos.add(clavesGrupos);
+    public void addClaveGrupo(String claveGrupo) {
+        clavesGrupos.add(claveGrupo);
     }
        
     public void printAsignatura(){

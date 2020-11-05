@@ -7,14 +7,14 @@ public class Profesor {
     private String gradoAcademico;
     private String nombre;
     private String correo; 
-    private List<String> claveGrupos = new LinkedList<>();
+    private List<String> claveGrupos;
 
     
     public Profesor(String nombre, String gradoAcademico, String correo){
         setNombre(nombre);
         setGradoAcademico(gradoAcademico);
         setCorreo(correo);
-        
+        claveGrupos = new LinkedList<>();
     }
     
     public void imprimeProfesor(){
@@ -62,7 +62,9 @@ public class Profesor {
         }
     }
     
-    
+    public List<String> getClavesGrupos() {
+        return claveGrupos;
+    }
    
     public void imprimeClaveGrupos() {
         if (claveGrupos == null || claveGrupos.size() == 0) {

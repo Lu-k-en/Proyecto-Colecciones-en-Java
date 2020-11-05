@@ -26,9 +26,10 @@ public class Menu{
                 entrada.nextLine();
                 
                 if(opcion < 1 || opcion > opciones.length){
+                    opcion = 0;
                     System.out.println("Has elegido el camino de la muerte >:v");
                     System.out.println("\nPresione una letra para continuar...");
-                    System.in.read();
+                    System.in.read(); 
                 }               
             }
             

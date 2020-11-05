@@ -2,6 +2,7 @@ package proyecto.colecciones.en.java;
 
 import java.io.IOException; 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 public class ProyectoColeccionesEnJava { 
@@ -38,8 +39,10 @@ public class ProyectoColeccionesEnJava {
 
                     System.out.println("Actualmente cuento con: ");
                     System.out.println("\t " + alumnos.size() + " alumnos");
-                    //System.out.println("\t " + profesores.size() + " profesores");
-
+                    System.out.println("\t " + profesores.size() + " profesores");
+                    System.out.println("\t " + asignaturas.size() + " asignaturas");
+                    System.out.println("\t " + grupos.size() + " grupos");
+                    
                     System.out.println("\nIndicame por favor, sobre que entidad deseas trabajar?");
                     
                     String[] opciones = {"Alumnos", "Profesores", "Asignaturas", "Grupos", "Sácame de aqui"};
@@ -50,7 +53,7 @@ public class ProyectoColeccionesEnJava {
                 case 1->{
                     
                     System.out.println("\n** Alumnos ");
-                    String[] subOpciones = {"Crear Alumno", "Mostrar Alumno", "Modificar Alumno", "Volver"};
+                    String[] subOpciones = {"Crear Alumno", "Mostrar Alumno", "Mostrar todos los Alumnos", "Volver"};
                     
                     int subSelector = Menu.menu(subOpciones);
                         
@@ -88,6 +91,15 @@ public class ProyectoColeccionesEnJava {
                             
                             if(alumnos.containsKey(numCuenta)){
                                 alumnos.get(numCuenta).imprimeAlumno();
+                                System.out.println("Clases");
+                                String[] clases = alumnos.get(numCuenta).getClavesGrupos();
+                                if (clases == null){
+                                    System.out.println("Este alumno no esta inscrito a ningún grupo");
+                                }else{
+                                    for(String var : clases){
+                                        grupos.get(var).printGrupo();
+                                    }
+                                }
                             }else{
                                 System.out.println("Lo siento, no existe un alumno con ese número de cuenta");
                             }
@@ -95,16 +107,19 @@ public class ProyectoColeccionesEnJava {
                         }
                         
                         case 3 -> {
-                            System.out.println("\n* Ingrese el número de cuenta del alumno");
-                            long numCuenta =sc.nextLong();
-                            sc.nextLine();
-                            
-                            if(alumnos.containsKey(numCuenta)){
-                                //SubMenú para editar alumno
-                            }else{
-                                System.out.println("Lo siento, no existe un alumno con ese número de cuenta");
+                            if (alumnos.size() <= 0) {
+                                System.out.println("No hay alumnos registrados");
+                                continue;
                             }
-                            break;
+                            //else
+                            System.out.println("Alumnos");
+                            Long[] alumnosKeys = alumnos.keySet().toArray(new Long[alumnos.size()]);
+                            
+                            for (int i = 0; i < alumnos.size(); i++) {
+                                System.out.println("Alumno " + (i + 1) + ":");
+                                System.out.println("\tNúmero de cuenta: " + alumnosKeys[i]);
+                                alumnos.get(alumnosKeys[i]).imprimeAlumno();
+                            }
                         }
                         
                         case 4 -> {
@@ -122,7 +137,7 @@ public class ProyectoColeccionesEnJava {
                 case 2 -> {
                     
                     System.out.println("\n** Profesores ");
-                    String[] subOpciones = {"Crear Profesor", "Mostrar Profesor", "Modificar Profesor", "Volver"};
+                    String[] subOpciones = {"Crear Profesor", "Mostrar Profesor", "Mostrar todos los Profesores", "Volver"};
                     
                     int subSelector = Menu.menu(subOpciones);
                         
@@ -178,6 +193,15 @@ public class ProyectoColeccionesEnJava {
                             
                             if(profesores.containsKey(numCuenta)){
                                 profesores.get(numCuenta).imprimeProfesor();
+                                System.out.println("Grupos ");
+                                List<String> clases = profesores.get(numCuenta).getClavesGrupos();
+                                if (clases == null){
+                                    System.out.println("Este profesor no tiene grupos");
+                                }else{
+                                    for(String var : clases){
+                                        grupos.get(var).printGrupo();
+                                    }
+                                }
                             }else{
                                 System.out.println("Lo siento, no existe un profesor con ese número de cuenta");
                             }
@@ -185,16 +209,19 @@ public class ProyectoColeccionesEnJava {
                         }
                         
                         case 3 -> {
-                            System.out.println("\n* Ingrese el número de cuenta del profesor");
-                            long numCuenta =sc.nextLong();
-                            sc.nextLine();
-                            
-                            if(profesores.containsKey(numCuenta)){
-                                //SubMenú para editar profesor
-                            }else{
-                                System.out.println("Lo siento, no existe un profesor con ese número de cuenta");
+                            if (profesores.size() <= 0) {
+                                System.out.println("No hay profesores registrados");
+                                continue;
                             }
-                            break;
+                            //else
+                            System.out.println("Profesores");
+                            Long[] profesoresKeys = profesores.keySet().toArray(new Long[profesores.size()]);
+                            
+                            for (int i = 0; i < profesores.size(); i++) {
+                                System.out.println("Profesor " + (i + 1) + ":");
+                                System.out.println("\tNúmero de cuenta: " + profesoresKeys[i]);
+                                profesores.get(profesoresKeys[i]).imprimeProfesor();
+                            }
                         }
                         
                         case 4 -> {
@@ -211,7 +238,7 @@ public class ProyectoColeccionesEnJava {
                 case 3 -> {
                     
                     System.out.println("\n** Asignaturas ");
-                    String[] subOpciones = {"Crear Asignatura", "Mostrar Asignatura", "Modificar Asignatura", "Volver"};
+                    String[] subOpciones = {"Crear Asignatura", "Mostrar Asignatura", "Mostrar todas las Asignaturas", "Volver"};
                     
                     int subSelector = Menu.menu(subOpciones);
                         
@@ -270,6 +297,14 @@ public class ProyectoColeccionesEnJava {
                             
                             if(asignaturas.containsKey(clave)){
                                 asignaturas.get(clave).printAsignatura();
+                                List<String> clases = asignaturas.get(clave).getClavesGrupos();
+                                if (clases == null){
+                                    System.out.println("Esta asignatura no tiene grupos");
+                                }else{
+                                    for(String var : clases){
+                                        grupos.get(var).printGrupo();
+                                    }
+                                }
                             }else{
                                 System.out.println("Lo siento, no existe una asignatura con esta clave");
                             }
@@ -277,16 +312,18 @@ public class ProyectoColeccionesEnJava {
                         }
                         
                         case 3 -> {
-                            System.out.println("\n* Ingrese la clave de la asignatura");
-                            clave = sc.nextInt();
-                            sc.nextLine();
-
-                            if (asignaturas.containsKey(clave)) {
-                                //sub menu editar asignatura
-                            } else {
-                                System.out.println("Lo siento, no existe una asignatura con esta clave");
+                            if (asignaturas.size() <= 0) {
+                                System.out.println("No hay asignaturas registradas");
+                                continue;
                             }
-                            break;
+                            //else
+                            Integer[] asignaturasKeys = asignaturas.keySet().toArray(new Integer[asignaturas.size()]);
+                            System.out.println("Asignaturas");
+                            for (int i = 0; i < asignaturas.size(); i++) {
+                                System.out.println("Asignatura " + (i + 1) + ":");
+                                System.out.println("\tClave: " + asignaturasKeys[i]);
+                                asignaturas.get(asignaturasKeys[i]).printAsignatura();
+                            }
                         }
                         
                         case 4 -> {
@@ -303,7 +340,7 @@ public class ProyectoColeccionesEnJava {
                 case 4 -> {
 
                     System.out.println("\n** Grupos ");
-                    String[] subOpciones = {"Crear Grupo", "Mostrar Grupo", "Modificar Grupo", "Volver"};
+                    String[] subOpciones = {"Crear Grupo", "Mostrar Grupo", "Añadir alumno a Grupo", "Volver"};
 
                     int subSelector = Menu.menu(subOpciones);
                     
@@ -319,9 +356,10 @@ public class ProyectoColeccionesEnJava {
                             //else
                             System.out.println("Elija un profesor");
                             Long[] profesoresKeys = profesores.keySet().toArray(new Long[profesores.size()]);
+                            
                             for (int i = 0; i < profesores.size(); i++) {
                                 System.out.println("Profesor " + (i + 1) + ":");
-                                profesores.get(profesoresKeys[i]);
+                                profesores.get(profesoresKeys[i]).imprimeProfesor();
                             }
                             opAux = sc.nextInt();
                             sc.nextLine();
@@ -407,7 +445,7 @@ public class ProyectoColeccionesEnJava {
                             if (grupos.containsKey(gruposKeys[opAux - 1]) == false) {
                                 System.out.println("No existe este grupo");
                             } else {
-                                //Editar Grupo
+                                //Añadir alumno a grupo
                             }
                             
                             break;

@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 public class Grupo {
-    private Set<Long> alumnosInscritos = new HashSet<>();
+    private Set<Long> alumnosInscritos;
     private Asignatura asignatura;
     private String clave;
     Profesor profesor;
@@ -15,6 +15,7 @@ public class Grupo {
         setAsignatura(asignatura);
         setProfesor(profesor);
         setClave(clave);
+        alumnosInscritos = new HashSet<>();
     }
     
     public void setAsignatura(Asignatura asignatura){
