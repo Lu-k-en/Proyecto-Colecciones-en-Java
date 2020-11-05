@@ -11,7 +11,7 @@ package proyecto.colecciones.en.java;
 public class Alumno {
     private String nombre;
     private int gruposInscritos = 0;
-    private String[] clavesGrupos = new String[3];
+    private String[] clavesGrupos;
     
     /**
      * Método constructor, inicializa el atributo nombre. No hace asignación directa, llama al método setNombre. 
@@ -21,6 +21,7 @@ public class Alumno {
      */
     public Alumno (String nombre){
         setNombre(nombre);
+        clavesGrupos = new String[3];
     }
     
     /**
@@ -56,6 +57,7 @@ public class Alumno {
         return clavesGrupos;
     }
     
+
     /**
      * Método que inicializa el arreglo de claves de Grupo.
      * @param claveGrupo1 Cadena que es la clave del Grupo 1
@@ -71,6 +73,7 @@ public class Alumno {
     /**
      * Método que imprime el nombre del Alumno.
      */
+
     public void imprimeAlumno(){
         System.out.println("\tNombre del Alumno: "+getNombre());
     }

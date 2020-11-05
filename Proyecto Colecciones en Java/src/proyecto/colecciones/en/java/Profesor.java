@@ -19,7 +19,7 @@ public class Profesor {
     private String gradoAcademico;
     private String nombre;
     private String correo; 
-    private List<String> claveGrupos = new LinkedList<>();
+    private List<String> claveGrupos;
 
     /**
      * Método constructor, inicializa el atributo nombre, gradoAcademico y correo. No hace asignación directa, llama a los métodos setters.
@@ -32,7 +32,7 @@ public class Profesor {
         setNombre(nombre);
         setGradoAcademico(gradoAcademico);
         setCorreo(correo);
-        
+        claveGrupos = new LinkedList<>();
     }
     
     /**
@@ -113,7 +113,12 @@ public class Profesor {
         }
     }
     
-    /**
+
+    public List<String> getClavesGrupos() {
+        return claveGrupos;
+    }
+   
+     /**
      * Método que imprime las claves de los grupos a los que da clase el Profesor, si es que los hay.
      */
     public void imprimeClaveGrupos() {
