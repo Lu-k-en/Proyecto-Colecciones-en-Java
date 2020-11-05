@@ -15,6 +15,9 @@ public class Grupo {
     private Calendar[] horario;
     Profesor profesor;
     
+    
+    
+    
     public Grupo(Asignatura asignatura, String clave, Calendar[] horario, Profesor profesor){
         setAsignatura(asignatura);
         setProfesor(profesor);
