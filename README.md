@@ -60,7 +60,7 @@
 
 Para información detallada respecto al uso de este programa visita nuestro <a href="https://github.com/TheQuetz/Proyecto-Colecciones-en-Java/wiki">Manual de usuario</a>. En él se detalla como clonar el proyecto y ejecutarlo en el entorno de desarrollo NetBeans, así como una guía general de uso.
 
-Para detalles sobre las clases que integran este proyecto visita nuetra <a href="https://thequetz.github.io/Proyecto-Colecciones-en-Java/">Documentación</a>
+Para detalles sobre las clases que integran este proyecto visita nuetra <a href="https://thequetz.github.io/Proyecto-Colecciones-en-Java/">Documentación</a>.
 
 <!-- CONTACT -->
 ## Contacto
