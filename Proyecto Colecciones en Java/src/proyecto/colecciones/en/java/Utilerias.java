@@ -3,13 +3,19 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- * 
- * @author Zuriel Zárate García.
+ * Clase Utilerias, no modela ningún tipo de dato abstracto en específico.
+ * Es solo un compendio de utilerias varias usadas a lo largo del proyecto.
  */
 
-public class Menu{
+public class Utilerias{
 
-    
+    /**
+     * Método que genera un menú con opciones y valida que la opción selecionada por el usuario
+     * se encuentre en un rango válido.
+     * 
+     * @param opciones arreglo de Strings con las diferentes opciones a mostrar
+     * @return la opción seleccionada por el usuario
+     */
     public static int menu (String[] opciones) throws IOException {
             
             Scanner entrada = new Scanner(System.in);

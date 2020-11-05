@@ -1,7 +1,13 @@
 package proyecto.colecciones.en.java;
 
 /**
- * Esta clase modela al objeto alumno, cuenta con los atributos: String nombre, int gruposInscritos (que es un contador del número de grupos inscritos) y String[3] clavesGrupos (que es un arreglo con las claves de los grupos inscritos)
+ * Clase Alumno, modela al objeto alumno. 
+ * 
+ * Cuenta con los atributos: 
+ * 
+ * |> nombre: nombre del alumno
+ * |> gruposInscritos: contador del número de grupos inscritos
+ * |> clavesGrupos: arreglo con las claves de los grupos inscritos
  *
  * @author Nuñez Quintana, Luis Axel
  * @author Martínez Olmos, Osiris
@@ -15,8 +21,6 @@ public class Alumno {
     
     /**
      * Método constructor, inicializa el atributo nombre. No hace asignación directa, llama al método setNombre. 
-     * 
-     * 
      * @param nombre Cadena que es nombre del Alumno
      */
     public Alumno (String nombre){
@@ -25,9 +29,7 @@ public class Alumno {
     }
     
     /**
-     * Método que devuelve al atributo nombre.
-     * 
-     * 
+     * Método getter del atributo nombre.
      * @return nombre Cadena que es el nombre del Alumno
      */
     public String getNombre() {
@@ -36,7 +38,6 @@ public class Alumno {
     
     /**
      * Método que inicializa el atributo nombre si este cuenta con más de 2 caracteres y menos de 50 caracteres.
-     * 
      * @param nombre Cadena que es el nombre del Alumno
      */
     public void setNombre(String nombre) {
@@ -49,29 +50,15 @@ public class Alumno {
     }
     
     /**
-     * Método que devuelve un arreglo de las claves de los grupos inscritos
-     * 
+     * Método que devuelve el arreglo de las claves de los grupos inscritos por el Alumno
      * @return clavesGrupos Arreglo de cadenas que contiene los claves de los grupos inscritos
      */
     public String[] getClavesGrupos() {
         return clavesGrupos;
     }
     
-
     /**
-     * Método que inicializa el arreglo de claves de Grupo.
-     * @param claveGrupo1 Cadena que es la clave del Grupo 1
-     * @param claveGrupo2 Cadena que es la clave del Grupo 1
-     * @param claveGrupo3 Cadena que es la clave del Grupo 1
-     */
-    public void setClavesGrupos(String claveGrupo1, String claveGrupo2, String claveGrupo3) { 
-        this.clavesGrupos[0] = claveGrupo1;
-        this.clavesGrupos[1] = claveGrupo2;
-        this.clavesGrupos[2] = claveGrupo3;
-    }
-    
-    /**
-     * Método que imprime el nombre del Alumno.
+     * Método que imprime el nombre del Alumno en un formato pre-establecido.
      */
 
     public void imprimeAlumno(){

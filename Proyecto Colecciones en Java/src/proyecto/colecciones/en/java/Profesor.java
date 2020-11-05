@@ -4,7 +4,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Esta clase modela al objeto Profesor, cuenta con los atributos: 
+ * Clase Profesor, modela al objeto Profesor.
+ * 
+ * Cuenta con los atributos: 
  * > gradoAcademico: Grado académico del Profesor. Ejemplo: MI, Ing, Doc, etc.
  * > nombre: Nombre del Profesor
  * > correo: Correo Electrónico del Profesor
