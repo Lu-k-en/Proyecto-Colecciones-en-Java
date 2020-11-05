@@ -87,8 +87,13 @@ public class Alumno {
         this.clavesGrupos[gruposInscritos] = claveGrupo;
         gruposInscritos++;
     }
-
- 
+    
+    /**
+     * Método que regresa la cantidad de grupos inscritos del alumno
+     */
+    public int getGruposInscritos(){
+        return gruposInscritos;
+    }
     
     
 }
