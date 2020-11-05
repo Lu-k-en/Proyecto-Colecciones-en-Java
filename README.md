@@ -1,6 +1,6 @@
 <!--
 *** Thanks for checking out this README Template. If you have a suggestion that would
-*** make this better, please fork the repo and create a pull request or simply open
+*** make this better, please fork the Proyecto-Colecciones-en-Java and create a pull request or simply open
 *** an issue with the tag "enhancement".
 *** Thanks again! Now go create something AMAZING! :D
 ***
@@ -41,7 +41,7 @@
     <br />
     <a href="https://github.com/TheQuetz/Proyecto-Colecciones-en-Java">View Demo</a>
     ·
-    <a href="https://github.com/TheQuetz/Proyecto-Colecciones-en-Java/issues">Report Bug</a>
+    <a href="https://github.com/TheQuetz/Proyecto-Colecciones-en-Java/issues">Proyecto-Colecciones-en-Javart Bug</a>
     ·
     <a href="https://github.com/TheQuetz/Proyecto-Colecciones-en-Java/issues">Request Feature</a>
   </p>
@@ -99,7 +99,7 @@ npm install npm@latest -g
 
 ### Installation
 
-1. Clone the repo
+1. Clone the Proyecto-Colecciones-en-Java
 ```sh
 git clone https://github.com/TheQuetz/Proyecto-Colecciones-en-Java.git
 ```
@@ -169,15 +169,15 @@ Project Link: [https://github.com/TheQuetz/Proyecto-Colecciones-en-Java](https:/
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/TheQuetz/Proyecto-Colecciones-en-Java.svg?style=flat-square
-[contributors-url]: https://github.com/TheQuetz/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/TheQuetz/repo.svg?style=flat-square
-[forks-url]: https://github.com/TheQuetz/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/TheQuetz/repo.svg?style=flat-square
-[stars-url]: https://github.com/TheQuetz/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/TheQuetz/repo.svg?style=flat-square
-[issues-url]: https://github.com/TheQuetz/repo/issues
-[license-shield]: https://img.shields.io/github/license/TheQuetz/repo.svg?style=flat-square
-[license-url]: https://github.com/TheQuetz/repo/blob/master/LICENSE.txt
+[contributors-url]: https://github.com/TheQuetz/Proyecto-Colecciones-en-Java/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/TheQuetz/Proyecto-Colecciones-en-Java.svg?style=flat-square
+[forks-url]: https://github.com/TheQuetz/Proyecto-Colecciones-en-Java/network/members
+[stars-shield]: https://img.shields.io/github/stars/TheQuetz/Proyecto-Colecciones-en-Java.svg?style=flat-square
+[stars-url]: https://github.com/TheQuetz/Proyecto-Colecciones-en-Java/stargazers
+[issues-shield]: https://img.shields.io/github/issues/TheQuetz/Proyecto-Colecciones-en-Java.svg?style=flat-square
+[issues-url]: https://github.com/TheQuetz/Proyecto-Colecciones-en-Java/issues
+[license-shield]: https://img.shields.io/github/license/TheQuetz/Proyecto-Colecciones-en-Java.svg?style=flat-square
+[license-url]: https://github.com/TheQuetz/Proyecto-Colecciones-en-Java/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/TheQuetz
 [product-screenshot]: images/screenshot.png
