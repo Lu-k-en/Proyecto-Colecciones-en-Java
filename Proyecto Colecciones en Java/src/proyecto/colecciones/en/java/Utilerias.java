@@ -45,8 +45,7 @@ public class Utilerias{
         return opcion;         
     }
     
-    
-    public static int menuAlumno(HashMap<Long,Alumno> alumnos, HashMap<String,Grupo> grupos){
+    public static void menuAlumno(HashMap<Long,Alumno> alumnos, HashMap<String,Grupo> grupos, int selector){
         String nombre;
         Scanner sc = new Scanner(System.in);
         
@@ -90,16 +89,12 @@ public class Utilerias{
                 if (alumnos.containsKey(numCuenta)) {
                     alumnos.get(numCuenta).imprimeAlumno();
                     System.out.println("Clases");
-                    if (alumnos.get(numCuenta).getGruposInscritos() == 0) {
+                    String[] clases = alumnos.get(numCuenta).getClavesGrupos();
+                    if (clases == null) {
                         System.out.println("Este alumno no esta inscrito a ningún grupo");
                     } else {
-                        String[] clases = alumnos.get(numCuenta).getClavesGrupos();
                         for (String var : clases) {
-                            if(grupos.containsKey(var)){
-                                grupos.get(var).printGrupo();
-                            }else{
-                                break;
-                            }
+                            grupos.get(var).printGrupo();
                         }
                     }
                 } else {
@@ -122,11 +117,11 @@ public class Utilerias{
                     System.out.println("\tNúmero de cuenta: " + alumnosKeys[i]);
                     alumnos.get(alumnosKeys[i]).imprimeAlumno();
                 }
-                break;
             }
 
             case 4 -> {
-                return 0;
+                selector = 0;
+                break;
             }
 
             default -> {
@@ -134,11 +129,10 @@ public class Utilerias{
                 break;
             }
         }
-        return 1;
     }
     
     
-    public static int menuProfesores(HashMap<Long, Profesor> profesores, HashMap<String, Grupo> grupos){
+    public static void menuProfesores(HashMap<Long, Profesor> profesores, HashMap<String, Grupo> grupos, int selector){
         Scanner sc = new Scanner(System.in);
         String nombre, correo, gradoAcademico;
         
@@ -201,15 +195,11 @@ public class Utilerias{
                     profesores.get(numCuenta).imprimeProfesor();
                     System.out.println("Grupos ");
                     List<String> clases = profesores.get(numCuenta).getClavesGrupos();
-                    if (clases.isEmpty()) {
+                    if (clases == null) {
                         System.out.println("Este profesor no tiene grupos");
                     } else {
                         for (String var : clases) {
-                            if (grupos.containsKey(var)) {
-                                grupos.get(var).printGrupo();
-                            } else {
-                                break;
-                            }
+                            grupos.get(var).printGrupo();
                         }
                     }
                 } else {
@@ -235,7 +225,8 @@ public class Utilerias{
             }
 
             case 4 -> {
-                return 0;
+                selector = 0;
+                break;
             }
 
             default -> {
@@ -243,10 +234,9 @@ public class Utilerias{
                 break;
             }
         }
-        return 2;
     }
     
-    public static int menuAsignaturas(HashMap<Integer, Asignatura> asignaturas, HashMap<String, Grupo> grupos){
+    public static void menuAsignaturas(HashMap<Integer, Asignatura> asignaturas, HashMap<String, Grupo> grupos, int selector){
         Scanner sc = new Scanner(System.in);
         int clave, semestre;
         String nombre, area; 
@@ -340,7 +330,8 @@ public class Utilerias{
             }
 
             case 4 -> {
-                return 0;
+                selector = 0;
+                break;
             }
 
             default -> {
@@ -348,10 +339,9 @@ public class Utilerias{
                 break;
             }
         }
-        return 3;
     }
     
-    public static int menuGrupos(HashMap<String, Grupo> grupos, HashMap<Integer, Asignatura> asignaturas, HashMap<Long,Profesor> profesores, HashMap<Long,Alumno> alumnos){
+    public static void menuGrupos(HashMap<String, Grupo> grupos, HashMap<Integer, Asignatura> asignaturas, HashMap<Long,Profesor> profesores, HashMap<Long,Alumno> alumnos, int selector){
         Scanner sc = new Scanner(System.in);
         int opAux, opAux2;
         
@@ -480,7 +470,7 @@ public class Utilerias{
             }
 
             case 4 -> {
-                return 0;
+                selector = 0;
             }
 
             default -> {
@@ -488,7 +478,5 @@ public class Utilerias{
                 break;
             }
         }
-        return 4;
     }
-    
 }
