@@ -4,7 +4,9 @@ import java.util.LinkedList;
 
 
 /**
- * Clase Asignatura,  modela una asignatura escolar. Cuenta con los atributos:
+ * Clase Asignatura, modela una asignatura escolar. 
+ * 
+ * Cuenta con los atributos:
  *  
  *  |> nombre: nombre de la asignatura 
  *  |> area: area de la asignatura
@@ -129,7 +131,7 @@ public class Asignatura {
      
   
     /**
-     * Método que imprime los atributos de la clase Asignatura con unn formato pre-establecido
+     * Método que imprime los atributos de la clase Asignatura en un formato pre-establecido
      */
      
     public void printAsignatura(){
