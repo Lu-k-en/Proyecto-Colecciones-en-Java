@@ -34,25 +34,20 @@
   <h3 align="center">Proyecto Colecciones en Java</h3>
 
   <p align="center">
-    YOUR_SHORT_DESCRIPTION
+    Primer proyecto de la materia de programación orientada a objetos | FI, UNAM
     <br />
-    <a href="https://github.com/TheQuetz/Proyecto-Colecciones-en-Java"><strong>Explore the docs »</strong></a>
+  
     <br />
-    <br />
-    <a href="https://github.com/TheQuetz/Proyecto-Colecciones-en-Java">View Demo</a>
-    ·
-    <a href="https://github.com/TheQuetz/Proyecto-Colecciones-en-Java/issues">Proyecto-Colecciones-en-Javart Bug</a>
-    ·
-    <a href="https://github.com/TheQuetz/Proyecto-Colecciones-en-Java/issues">Request Feature</a>
+    <a href="https://thequetz.github.io/Proyecto-Colecciones-en-Java/">Documentación de clases</a>
   </p>
 </p>
 
 
 
 <!-- TABLE OF CONTENTS -->
-## Table of Contents
+## Tabla de contenidos
 
-* [About the Project](#about-the-project)
+* [Sobre el proyecto](#about-the-project)
   * [Built With](#built-with)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
