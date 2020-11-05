@@ -1,5 +1,6 @@
 package proyecto.colecciones.en.java;
 import java.util.List;
+import java.util.LinkedList;
 
 
 /**
@@ -35,6 +36,7 @@ public class Asignatura {
         setNombre(nombre);
         setArea(area);
         setSemestre(semestre);
+        clavesGrupos = new LinkedList<>();
     }
     
     
@@ -84,6 +86,7 @@ public class Asignatura {
         }
     }
     
+
    /**
     * Método getter del atributo semestre
     * @return un entero correspondiente al semestre al que pertenece la asignatura
@@ -115,14 +118,16 @@ public class Asignatura {
         return clavesGrupos;
     }
     
-    /**
+   /**
      * Método para agregar grupos a la lista clavesGrupos. 
-     * @param clavesGrupos String con la clave del grupo a agregar en la lista
+     * @param claveGrupo String con la clave del grupo a agregar en la lista
      */
-    public void addClaveGrupo(String clavesGrupos) {
-        this.clavesGrupos.add(clavesGrupos);
+
+    public void addClaveGrupo(String claveGrupo) {
+        clavesGrupos.add(claveGrupo);
     }
      
+  
     /**
      * Método que imprime los atributos de la clase Asignatura con unn formato pre-establecido
      */

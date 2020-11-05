@@ -3,10 +3,11 @@ package proyecto.colecciones.en.java;
 public class Alumno {
     private String nombre;
     private int gruposInscritos = 0;
-    private String[] clavesGrupos = new String[3];
+    private String[] clavesGrupos;
     
     public Alumno (String nombre){
         setNombre(nombre);
+        clavesGrupos = new String[3];
     }
     
     public String getNombre() {
@@ -24,12 +25,6 @@ public class Alumno {
    
     public String[] getClavesGrupos() {
         return clavesGrupos;
-    }
-    
-    public void setClavesGrupos(String claveGrupo1, String claveGrupo2, String claveGrupo3) { 
-        this.clavesGrupos[0] = claveGrupo1;
-        this.clavesGrupos[1] = claveGrupo2;
-        this.clavesGrupos[2] = claveGrupo3;
     }
     
     public void imprimeAlumno(){

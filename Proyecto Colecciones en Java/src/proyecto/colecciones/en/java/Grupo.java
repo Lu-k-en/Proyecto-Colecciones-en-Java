@@ -2,27 +2,22 @@ package proyecto.colecciones.en.java;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.Calendar;
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.Iterator;
 
-
-
 public class Grupo {
-    private Set<Long> alumnosInscritos = new HashSet<>();
+    private Set<Long> alumnosInscritos;
     private Asignatura asignatura;
     private String clave;
-    private Calendar[] horario;
     Profesor profesor;
     
-    
-    
-    
-    public Grupo(Asignatura asignatura, String clave, Calendar[] horario, Profesor profesor){
+
+    public Grupo(Asignatura asignatura, String clave, Profesor profesor){
+
         setAsignatura(asignatura);
         setProfesor(profesor);
-        setHorario(horario);
         setClave(clave);
+        alumnosInscritos = new HashSet<>();
     }
     
     public void setAsignatura(Asignatura asignatura){
@@ -41,14 +36,6 @@ public class Grupo {
         return profesor;
     }
     
-    public void setHorario(Calendar[] horario){
-        this.horario = horario;
-    }
-    
-    public Calendar[] getHorario(){
-        return horario;
-    }
-    
     public void setClave(String clave){
         this.clave = clave;
     }
@@ -57,7 +44,9 @@ public class Grupo {
         return clave;
     }
     
-
+    public Set<Long> getAlumnos(){
+        return alumnosInscritos;
+    }
     
     public boolean addAlumno(long numCuenta){
         if(alumnosInscritos.contains(numCuenta)){
@@ -69,7 +58,7 @@ public class Grupo {
         }
     }
     
-    public void imprimirListaGrupo(Hashtable<Long,Alumno> alumnos){  
+    public void imprimirListaGrupo(HashMap<Long,Alumno> alumnos){  
         
         System.out.println("** Esta es la lista de alumnos inscritos: ");
         
@@ -85,5 +74,15 @@ public class Grupo {
                 
             }
         }
+    }
+    
+    public void printGrupo(){  
+        
+        System.out.println("\tClave : " + clave);
+        System.out.println("\tProfesor ");
+        profesor.imprimeProfesor();
+        System.out.println("\tAsignatura ");
+        asignatura.printAsignatura();  
+        
     }
 }
