@@ -91,7 +91,6 @@ public class Grupo {
      * Método getter del atributo clave
      * @return Un string correspondiente a la clave (identificador único) del grupo
      */
-    
     public String getClave(){
         return clave;
     }

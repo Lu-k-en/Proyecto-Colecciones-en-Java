@@ -2,7 +2,6 @@ package proyecto.colecciones.en.java;
 import java.util.List;
 import java.util.LinkedList;
 
-
 /**
  * Clase Asignatura, modela una asignatura escolar. 
  * 

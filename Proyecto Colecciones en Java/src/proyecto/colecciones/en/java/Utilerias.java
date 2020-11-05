@@ -9,6 +9,7 @@ import java.util.List;
  * Es solo un compendio de utilerias varias usadas a lo largo del proyecto.
  */
 
+
 public class Utilerias{
 
     /**

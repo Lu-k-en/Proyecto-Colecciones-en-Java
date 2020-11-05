@@ -2,7 +2,6 @@ package proyecto.colecciones.en.java;
 
 import java.io.IOException; 
 import java.util.HashMap;
-import java.util.Scanner;
 
 public class ProyectoColeccionesEnJava { 
     
