@@ -11,7 +11,9 @@ public class Grupo {
     private String clave;
     Profesor profesor;
     
+
     public Grupo(Asignatura asignatura, String clave, Profesor profesor){
+
         setAsignatura(asignatura);
         setProfesor(profesor);
         setClave(clave);
