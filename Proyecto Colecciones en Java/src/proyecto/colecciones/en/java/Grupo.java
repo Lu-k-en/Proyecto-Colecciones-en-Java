@@ -7,7 +7,7 @@ import java.util.Iterator;
 
 
 /**
- * CLase Grupo,  modela al objeto grupo escolar.
+ * Clase Grupo,  modela al objeto grupo escolar.
  * 
  * Cuenta con los siguientes atributos:
  * 
@@ -127,8 +127,6 @@ public class Grupo {
      */
     public void imprimirListaGrupo(HashMap<Long,Alumno> alumnos){  
         
-        int coincidencias = 0;
-        
         System.out.println("** Esta es la lista de alumnos inscritos: ");
         
         if (alumnosInscritos.isEmpty()) {
@@ -140,10 +138,8 @@ public class Grupo {
             for (int i = 0; i < alumnosInscritos.size(); i++) {
                 long numCuentaSiguiente = alumnosIterable.next();
                 System.out.println("\t" + (i+1) + ") " + alumnos.get(numCuentaSiguiente).getNombre());
-                
             }
-            
-            if(coincidencias == 0) System.out.println("No encontré la información de los alumnos inscritos. Verifica con el administrador del sistema.");
+
         }
     }
     
