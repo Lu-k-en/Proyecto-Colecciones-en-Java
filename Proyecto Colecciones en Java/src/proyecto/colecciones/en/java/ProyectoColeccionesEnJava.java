@@ -35,7 +35,7 @@ public class ProyectoColeccionesEnJava {
                
                 case 0->{
                 
-                    System.out.println("###  Menu Principal  ###");
+                    System.out.println("###  Utilerias Principal  ###");
 
                     System.out.println("Actualmente cuento con: ");
                     System.out.println("\t " + alumnos.size() + " alumnos");
@@ -46,7 +46,7 @@ public class ProyectoColeccionesEnJava {
                     System.out.println("\nIndicame por favor, sobre que entidad deseas trabajar?");
                     
                     String[] opciones = {"Alumnos", "Profesores", "Asignaturas", "Grupos", "Sácame de aqui"};
-                    selector = Menu.menu(opciones);
+                    selector = Utilerias.menu(opciones);
                     
                 }
                 
@@ -55,7 +55,7 @@ public class ProyectoColeccionesEnJava {
                     System.out.println("\n** Alumnos ");
                     String[] subOpciones = {"Crear Alumno", "Mostrar Alumno", "Mostrar todos los Alumnos", "Volver"};
                     
-                    int subSelector = Menu.menu(subOpciones);
+                    int subSelector = Utilerias.menu(subOpciones);
                         
                     switch(subSelector){
                         case 1 ->{
@@ -139,7 +139,7 @@ public class ProyectoColeccionesEnJava {
                     System.out.println("\n** Profesores ");
                     String[] subOpciones = {"Crear Profesor", "Mostrar Profesor", "Mostrar todos los Profesores", "Volver"};
                     
-                    int subSelector = Menu.menu(subOpciones);
+                    int subSelector = Utilerias.menu(subOpciones);
                         
                     switch(subSelector){
                         case 1 ->{
@@ -240,7 +240,7 @@ public class ProyectoColeccionesEnJava {
                     System.out.println("\n** Asignaturas ");
                     String[] subOpciones = {"Crear Asignatura", "Mostrar Asignatura", "Mostrar todas las Asignaturas", "Volver"};
                     
-                    int subSelector = Menu.menu(subOpciones);
+                    int subSelector = Utilerias.menu(subOpciones);
                         
                     switch(subSelector){
                         case 1 ->{
@@ -342,7 +342,7 @@ public class ProyectoColeccionesEnJava {
                     System.out.println("\n** Grupos ");
                     String[] subOpciones = {"Crear Grupo", "Mostrar Grupo", "Añadir alumno a Grupo", "Volver"};
 
-                    int subSelector = Menu.menu(subOpciones);
+                    int subSelector = Utilerias.menu(subOpciones);
                     
                     
                     switch (subSelector) {
