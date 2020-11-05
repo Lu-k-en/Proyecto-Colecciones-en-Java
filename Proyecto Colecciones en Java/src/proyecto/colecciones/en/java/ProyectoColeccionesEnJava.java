@@ -29,8 +29,7 @@ public class ProyectoColeccionesEnJava {
         int opAux2;
         //
         do{
-           
-          
+
             switch(selector){
                
                 case 0->{
