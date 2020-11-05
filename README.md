@@ -23,22 +23,15 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/TheQuetz/Proyecto-Colecciones-en-Java">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.png" alt="Logo" width="100" height="100">
   </a>
 
-  <h3 align="center">YOUR_TITLE</h3>
+  <h3 align="center">Proyecto Colecciones en Java</h3>
 
   <p align="center">
     YOUR_SHORT_DESCRIPTION
