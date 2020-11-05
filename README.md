@@ -65,9 +65,9 @@ Para detalles sobre las clases que integran este proyecto visita nuetra <a href=
 <!-- CONTACT -->
 ## Contacto
 
-Axel Nuñez []
+Axel Nuñez [LuisAxel] - axelnunez5@gmail.com
 <br />
-Osiris Martinez [] - 
+Osiris Martinez [mtzosiriso] - osiris_olmos@hotmail.com
 <br />
 Luis Rosales [TheQuetz] - theQuetz@protonmail.com
 <br />
