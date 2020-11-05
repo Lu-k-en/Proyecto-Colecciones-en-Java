@@ -3,8 +3,19 @@ package proyecto.colecciones.en.java;
 import java.io.IOException; 
 import java.util.HashMap;
 
+/**
+ * Clase ProyectoColeccionesEnJava, contiene las colecciones de objetos generales y el menú principal.
+ * @author Nuñez Quintana, Luis Axel
+ * @author Martínez Olmos, Osiris
+ * @author Rosales Lopez, Luis André
+ */
+
 public class ProyectoColeccionesEnJava { 
-    
+    /**
+     * Método principal, contiene el menú principal y las colecciones de objetos generales
+     * 
+     * @param args Datos ingresados por línea de comandos, no se utiliza en el programa
+     */
     public static void main(String[] args) throws IOException {
         
         //Hashtable key = #cuenta, value = alumno || clave, asignatura
