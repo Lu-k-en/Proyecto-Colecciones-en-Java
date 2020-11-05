@@ -14,6 +14,7 @@ package proyecto.colecciones.en.java;
  * @author Rosales Lopez, Luis André
  *
  */
+
 public class Alumno {
     private String nombre;
     private int gruposInscritos = 0;
@@ -87,8 +88,13 @@ public class Alumno {
         this.clavesGrupos[gruposInscritos] = claveGrupo;
         gruposInscritos++;
     }
-
- 
+    
+    /**
+     * Método que regresa la cantidad de grupos inscritos del alumno
+     */
+    public int getGruposInscritos(){
+        return gruposInscritos;
+    }
     
     
 }

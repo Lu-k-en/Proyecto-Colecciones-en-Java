@@ -17,6 +17,7 @@ import java.util.List;
  * @author Rosales Lopez, Luis André
  *
  */
+
 public class Profesor {
     private String gradoAcademico;
     private String nombre;
