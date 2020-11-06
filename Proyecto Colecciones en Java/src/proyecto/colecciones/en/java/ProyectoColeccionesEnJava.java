@@ -21,8 +21,8 @@ public class ProyectoColeccionesEnJava {
         //Hashtable key = #cuenta, value = alumno || clave, asignatura
         HashMap<Long,Alumno> alumnos = new HashMap<>();
         HashMap<Long,Profesor> profesores = new HashMap<>();
-        
         HashMap<Integer,Asignatura> asignaturas = new HashMap<>(); 
+        
         HashMap<String, Grupo> grupos = new HashMap<>();
         
         int selector = 0;
@@ -54,7 +54,7 @@ public class ProyectoColeccionesEnJava {
                 }
                 
                 case 2 -> {
-                     selector = Utilerias.menuProfesores(profesores, grupos);
+                    selector = Utilerias.menuProfesores(profesores, grupos);
                     break;
                 }
                 
