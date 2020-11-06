@@ -33,7 +33,7 @@ public class ProyectoColeccionesEnJava {
                
                 case 0->{
                 
-                    System.out.println("###  Utilerias Principal  ###");
+                    System.out.println("###  Menú Principal  ###");
 
                     System.out.println("Actualmente cuento con: ");
                     System.out.println("\t " + alumnos.size() + " alumnos");
