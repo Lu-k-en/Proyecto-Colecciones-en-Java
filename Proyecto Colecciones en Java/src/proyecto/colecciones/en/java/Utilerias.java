@@ -39,7 +39,7 @@ public class Utilerias{
 
             if(opcion < 1 || opcion > opciones.length){
                 opcion = 0;
-                System.out.println("Has elegido el camino de la muerte >:v");
+                System.out.println("Has elegido el camino de la muerte >:v... Intenta nuevamente");
                 System.out.println("\nPresione enter para continuar...");
                 entrada.nextLine(); 
             }               
@@ -74,6 +74,8 @@ public class Utilerias{
 
                 if (alumnos.containsKey(numCuenta)) {
                     System.out.println("Lo siento, ya existe un alumno con ese número de cuenta");
+                    System.out.println("\nPresione enter para continuar...");
+                    sc.nextLine();
                 } else {
                     System.out.print("Nombre completo: ");
                     nombre = sc.nextLine();
@@ -92,7 +94,7 @@ public class Utilerias{
             }
 
             case 2 -> {
-                System.out.println("\n* Ingrese el número de cuenta del alumno");
+                System.out.print("\n* Ingrese el número de cuenta del alumno: ");
                 long numCuenta = sc.nextLong();
                 sc.nextLine();
 
@@ -101,9 +103,13 @@ public class Utilerias{
                     System.out.println("Clases");
                     if (alumnos.get(numCuenta).getGruposInscritos() == 0) {
                         System.out.println("Este alumno no esta inscrito a ningún grupo");
+                        System.out.println("\nPresione enter para continuar...");
+                        sc.nextLine();
                     } else {
+                        
                         String[] clases = alumnos.get(numCuenta).getClavesGrupos();
                         for (String var : clases) {
+                            System.out.println("\n");
                             if(grupos.containsKey(var)){
                                 grupos.get(var).printGrupo();
                             }else{
@@ -113,6 +119,8 @@ public class Utilerias{
                     }
                 } else {
                     System.out.println("Lo siento, no existe un alumno con ese número de cuenta");
+                    System.out.println("\nPresione enter para continuar...");
+                    sc.nextLine();
                 }
                 break;
             }
@@ -120,6 +128,8 @@ public class Utilerias{
             case 3 -> {
                 if (alumnos.size() <= 0) {
                     System.out.println("No hay alumnos registrados");
+                    System.out.println("\nPresione enter para continuar...");
+                    sc.nextLine();
                     break;
                 }
                 //else
@@ -140,6 +150,8 @@ public class Utilerias{
 
             default -> {
                 System.out.println("Opción no válida");
+                System.out.println("\nPresione enter para continuar...");
+                sc.nextLine();
                 break;
             }
         }
@@ -172,6 +184,8 @@ public class Utilerias{
 
                 if (profesores.containsKey(numCuenta)) {
                     System.out.println("Lo siento, ya existe un profesor con ese número de cuenta");
+                    System.out.println("\nPresione enter para continuar...");
+                    sc.nextLine();
                 } else {
                     System.out.print("Nombre completo: ");
                     nombre = sc.nextLine();
@@ -218,6 +232,8 @@ public class Utilerias{
                     List<String> clases = profesores.get(numCuenta).getClavesGrupos();
                     if (clases.isEmpty()) {
                         System.out.println("Este profesor no tiene grupos");
+                        System.out.println("\nPresione enter para continuar...");
+                        sc.nextLine();
                     } else {
                         for (String var : clases) {
                             if (grupos.containsKey(var)) {
@@ -229,6 +245,8 @@ public class Utilerias{
                     }
                 } else {
                     System.out.println("Lo siento, no existe un profesor con ese número de cuenta");
+                    System.out.println("\nPresione enter para continuar...");
+                    sc.nextLine();
                 }
                 break;
             }
@@ -236,6 +254,8 @@ public class Utilerias{
             case 3 -> {
                 if (profesores.size() <= 0) {
                     System.out.println("No hay profesores registrados");
+                    System.out.println("\nPresione enter para continuar...");
+                    sc.nextLine();
                     break;
                 }
                 //else
@@ -255,6 +275,8 @@ public class Utilerias{
 
             default -> {
                 System.out.println("Opción no válida");
+                System.out.println("\nPresione enter para continuar...");
+                sc.nextLine();
                 break;
             }
         }
@@ -288,6 +310,8 @@ public class Utilerias{
 
                 if (asignaturas.containsKey(clave)) {
                     System.out.println("Lo siento, ya existe una asignatura con esta clave");
+                    System.out.println("\nPresione enter para continuar...");
+                    sc.nextLine();
                 } else {
                     System.out.print("Nombre: ");
                     nombre = sc.nextLine();
@@ -326,7 +350,7 @@ public class Utilerias{
             }
 
             case 2 -> {
-                System.out.println("\n* Ingrese la clave de la asignatura");
+                System.out.print("\n* Ingrese la clave de la asignatura: ");
                 clave = sc.nextInt();
                 sc.nextLine();
 
@@ -335,6 +359,8 @@ public class Utilerias{
                     List<String> clases = asignaturas.get(clave).getClavesGrupos();
                     if (clases.isEmpty()) {
                         System.out.println("Esta asignatura no tiene grupos");
+                        System.out.println("\nPresione enter para continuar...");
+                        sc.nextLine();
                     } else {
                         for (String var : clases) {
                             if (grupos.containsKey(var)) {
@@ -346,6 +372,8 @@ public class Utilerias{
                     }
                 } else {
                     System.out.println("Lo siento, no existe una asignatura con esta clave");
+                    System.out.println("\nPresione enter para continuar...");
+                    sc.nextLine();
                 }
                 break;
             }
@@ -353,6 +381,8 @@ public class Utilerias{
             case 3 -> {
                 if (asignaturas.size() <= 0) {
                     System.out.println("No hay asignaturas registradas");
+                    System.out.println("\nPresione enter para continuar...");
+                    sc.nextLine();
                     break;
                 }
                 //else
@@ -371,6 +401,8 @@ public class Utilerias{
 
             default -> {
                 System.out.println("Opción no válida");
+                System.out.println("\nPresione enter para continuar...");
+                sc.nextLine();
                 break;
             }
         }
@@ -401,45 +433,56 @@ public class Utilerias{
                 System.out.println("\n* Creando Grupo");
                 if (profesores.size() <= 0 || asignaturas.size() <= 0) {
                     System.out.println("No hay profesores registrados o asignaturas registradas");
+                    System.out.println("\nPresione enter para continuar...");
+                    sc.nextLine();
                     break;
                 }
                 //else
-                System.out.println("Elija un profesor");
+                System.out.println("Elija uno de los siguientes profesores: \n");
                 Long[] profesoresKeys = profesores.keySet().toArray(new Long[profesores.size()]);
 
                 for (int i = 0; i < profesores.size(); i++) {
                     System.out.println("Profesor " + (i + 1) + ":");
                     profesores.get(profesoresKeys[i]).imprimeProfesor();
                 }
+                
+                System.out.print("\nProfesor seleccionado: ");
                 opAux = sc.nextInt();
                 sc.nextLine();
 
                 if (profesores.containsKey(profesoresKeys[opAux - 1]) == false) {
                     System.out.println("Elegiste una opción inválida");
+                    System.out.println("\nPresione enter para continuar...");
+                    sc.nextLine();
                     break;
                 }
 
                 Integer[] asignaturasKeys = asignaturas.keySet().toArray(new Integer[asignaturas.size()]);
-                System.out.println("Elija una asignatura");
+                System.out.println("Elija una de las siguientes asignaturas: \n");
                 for (int i = 0; i < asignaturas.size(); i++) {
                     System.out.println("Asignatura " + (i + 1) + ":");
                     asignaturas.get(asignaturasKeys[i]).printAsignatura();
                 }
+                System.out.print("\nAsignatura seleccionada: ");
                 opAux2 = sc.nextInt();
                 sc.nextLine();
 
                 if (asignaturas.containsKey(asignaturasKeys[opAux2 - 1]) == false) {
                     System.out.println("Elegiste una opción inválida");
+                    System.out.println("\nPresione enter para continuar...");
+                    sc.nextLine();
                     break;
                 }
                 //else
-                System.out.println("Ingrese la clave del grupo");
+                System.out.print("\nIngrese la clave del grupo: ");
                 String claveGrupo = sc.nextLine();
                 //Clave grupo = nombre asignatura + clave de grupo;
                 claveGrupo = asignaturas.get(asignaturasKeys[opAux2 - 1]).getNombre() + claveGrupo;
 
                 if (grupos.containsKey(claveGrupo)) {
                     System.out.println("Ya existe este grupo");
+                    System.out.println("\nPresione enter para continuar...");
+                    sc.nextLine();
                 } else {
                     grupos.put(claveGrupo, new Grupo(asignaturas.get(asignaturasKeys[opAux2 - 1]), claveGrupo, profesores.get(profesoresKeys[opAux - 1])));
                     profesores.get(profesoresKeys[opAux - 1]).addClaveGrupo(claveGrupo);
@@ -453,21 +496,26 @@ public class Utilerias{
                 System.out.println("\n* Mostrar Grupo");
                 if (grupos.size() <= 0) {
                     System.out.println("No hay grupos registrados");
+                    System.out.println("\nPresione enter para continuar...");
+                    sc.nextLine();
                     break;
                 }
 
                 String[] gruposKeys = grupos.keySet().toArray(new String[grupos.size()]);
-                System.out.println("Elija un grupo");
+                System.out.println("Elije uno de los siguientes grupos: \n");
                 for (int i = 0; i < grupos.size(); i++) {
                     System.out.println("Grupo " + (i + 1) + ":");
                     grupos.get(gruposKeys[i]).printGrupo();
                 }
-
+                
+                System.out.print("\nGrupo seleccionado: ");
                 opAux = sc.nextInt();
                 sc.nextLine();
 
                 if (grupos.containsKey(gruposKeys[opAux - 1]) == false) {
                     System.out.println("No existe este grupo");
+                    System.out.println("\nPresione enter para continuar...");
+                    sc.nextLine();
                 } else {
                     grupos.get(gruposKeys[opAux - 1]).imprimirListaGrupo(alumnos);
                 }
@@ -479,20 +527,22 @@ public class Utilerias{
                 System.out.println("\n* Inscribir Alumno");
                 if (grupos.size() <= 0) {
                     System.out.println("No hay grupos registrados");
+                    System.out.println("\nPresione enter para continuar...");
+                    sc.nextLine();
                     break;
                 }
 
                 String[] gruposKeys = grupos.keySet().toArray(new String[grupos.size()]);
-                System.out.println("Elija un grupo");
+                System.out.println("Elije uno de los siguientes grupos: \n");
                 for (int i = 0; i < grupos.size(); i++) {
                     System.out.println("Grupo " + (i + 1) + ":");
                     grupos.get(gruposKeys[i]).printGrupo();
                 }
-
+                System.out.print("\nGrupo seleccionado: ");
                 opAux = sc.nextInt();
                 sc.nextLine();
 
-                System.out.println("\n* Ingrese el número de cuenta del alumno");
+                System.out.print("\n* Ingrese el número de cuenta del alumno: ");
                 long numCuenta = sc.nextLong();
                 sc.nextLine();
 
@@ -504,11 +554,15 @@ public class Utilerias{
                         }
                     } else {
                         System.out.println("Este alumno ya se inscribió a 3 grupos");
+                        System.out.println("\nPresione enter para continuar...");
+                        sc.nextLine();
                     }
 
                 } else {
 
                     System.out.println("Lo siento, no existe un alumno con ese número de cuenta");
+                    System.out.println("\nPresione enter para continuar...");
+                    sc.nextLine();
                 }
                 
                 break;
@@ -520,6 +574,8 @@ public class Utilerias{
 
             default -> {
                 System.out.println("Opción no válida");
+                System.out.println("\nPresione enter para continuar...");
+                sc.nextLine();
                 break;
             }
         }
