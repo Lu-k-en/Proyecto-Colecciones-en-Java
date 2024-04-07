@@ -69,7 +69,7 @@ Axel Nuñez [LuisAxel] - axelnunez5@gmail.com
 <br />
 Osiris Martinez [mtzosiriso] - osiris_olmos@hotmail.com
 <br />
-Luis Rosales [TheQuetz] - theQuetz@protonmail.com
+Luis Rosales [Lᵾᴋᴇɴ] - theQuetz@protonmail.com
 <br />
 
 <!-- MARKDOWN LINKS & IMAGES -->
